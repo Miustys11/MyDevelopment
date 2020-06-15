@@ -1,0 +1,110 @@
+body {
+  color: #000;
+  background-color: #e6e6e6;
+}
+
+.container a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff0000;
+}
+
+/* ここからheaderのcss */
+
+.header-container {
+  width: 960px;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+.header-logo img {
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+
+.clearflex {
+  width: 389px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.clearflex li {
+  width: 79px;
+  height: 50px;
+  list-style: none;
+  display: inline-block;
+  text-align: center;
+}
+
+/*li:last-child {*/
+/*  background-color: #C0C0C0;*/
+/*  color: #000;*/
+/*}*/
+
+.clearflex a {
+  width: 79px;
+  display: block;
+  margin: 13px 0;
+  border-right: dashed 1px #C0C0C0;
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff0000;
+}
+
+/* ここまでheaderのcss */
+
+/* ここから goods/show.blade.php のcss */
+
+.body-container {
+  width: 960px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.link ol {
+  padding-left: 0;
+  height: 20px;
+  margin-bottom: 15px;
+}
+
+.link li {
+  height: 20px;
+  list-style: none;
+  display: inline-block;
+}
+
+.detail {
+  width: 180px;
+  height: 400px;
+  display: inline-block;
+  background-color: #fff;
+}
+
+.goods-name h1 {
+   width: 150px;
+   margin: 15px;
+   font-size: 123.1%;
+   text-align: left;
+   word-wrap: break-word;
+}
+
+.description p {
+    width: 150px;
+    height: 76px;
+    margin: 15px;
+    font-size: 10px;
+}
+
+/* ここまで goods/show.blade.php のcss */
