@@ -26,6 +26,11 @@ a:hover {
   float: left;
 }
 
+.header-logo a {
+  width: 50px;
+  height: 50px;
+}
+
 .clearflex {
   width: 389px;
   height: 50px;
@@ -85,7 +90,7 @@ a:hover {
   display: inline-block;
 }
 
-.detail {
+.details {
   width: 180px;
   height: 400px;
   display: inline-block;
@@ -105,6 +110,35 @@ a:hover {
     height: 76px;
     margin: 15px;
     font-size: 10px;
+}
+
+.image {
+  width: 500px;
+  display: inline-block;
+  margin: 0 35px 0 65px;
+}
+
+.image img {
+  width: 474px;
+}
+
+#top {
+  float: left;
+}
+
+#bottom {
+  float: right;
+}
+
+.size h1 {
+   width: 150px;
+   margin: 15px;
+   font-size: 123.1%;
+   text-align: left;
+}
+
+.size p {
+  margin-left: 10px;
 }
 
 /* ここまで goods/show.blade.php のcss */

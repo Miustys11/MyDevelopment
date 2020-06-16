@@ -34,6 +34,9 @@ return [
     | Supported: "session", "token"
     |
     */
+    
+    // guardsの参考サイト
+    // https://qiita.com/tomoeine/items/40a966bf3801633cf90f
 
     'guards' => [
         'web' => [

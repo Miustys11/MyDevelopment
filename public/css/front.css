@@ -26,6 +26,11 @@ a:hover {
   float: left;
 }
 
+.header-logo a {
+  width: 50px;
+  height: 50px;
+}
+
 .clearflex {
   width: 389px;
   height: 50px;

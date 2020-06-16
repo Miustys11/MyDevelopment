@@ -11,7 +11,7 @@
                     <li><a href="#">マーセライズコットンボートネックT（半袖）</a></li>
                 </ol>
                 <div class="detail">
-                    <div class="detail-top">
+                    <div class="details top" id="top">
                         <div class="goods-name">
                             <h1>{{ $goods->name }}</h1>
                         </div>
@@ -22,11 +22,13 @@
                             {{ $goods->amount }}円
                         </div>
                     </div>
-                    <div class="detail-bottom">
-                        
+                    <div class="image">
+                        <img src="{{ asset('storage/image/'  . $goods->image_path) }}">
+                    </div>
+                    <div class="details bottom" id="bottom">
+                     
                     </div>
                 </div>
-                <!--<img src="{{ asset('storage/image/'  . $goods->image_path) }}">-->
             </div>
         </div>
     </div>

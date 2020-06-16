@@ -30,7 +30,9 @@
         <div id="app">
             <div class="header-container">
                 <div class="header-logo">
-                    <img alt="UNIQLO" src="{{ asset('/img/uniqlo.png') }}">
+                    <a href="{{ action('GoodsController@index') }}">
+                        <img alt="UNIQLO" src="{{ asset('/img/uniqlo.png') }}">
+                    </a>
                 </div>
                 <ul class="clearflex">
                     <li><a href="#">WOMAN</a></li>

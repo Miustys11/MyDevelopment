@@ -15,6 +15,9 @@
 //     return view('welcome');
 // });
 
+// ルートミドルウェアとは
+// 認証済みユーザーのみアクセスを許可する
+
 Route::group(['prefix' => 'admin'], function() {
     Route::get('goods/create', 'Admin\GoodsController@add')->middleware('auth');
     Route::post('goods/create', 'Admin\GoodsController@create')->middleware('auth');
@@ -27,6 +30,10 @@ Route::group(['prefix' => 'admin'], function() {
 
 Route::get('/', 'GoodsController@index');
 Route::get('goods/{id}', 'GoodsController@show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
