@@ -8,7 +8,7 @@
         <title>My Goods</title>
     </head>
     <body>
-        @extends('layouts.common')
+        @extends('layouts.admin')
         @section('title', '商品詳細')
         
         @section('content')
