@@ -25,6 +25,12 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('goods/edit', 'Admin\GoodsController@edit')->middleware('auth');
     Route::post('goods/edit', 'Admin\GoodsController@update')->middleware('auth');
     Route::get('goods/delete', 'Admin\GoodsController@delete')->middleware('auth');
+    
+    Route::get('login', 'Admin\Auth\LoginController@showLoginForm')->name('admin.login');
+    Route::post('login', 'AdminAuth\LoginController@login')->name('admin.login');
+    Route::post('logout', 'AdminAuth\LoginController@logout')->name('admin.logout');
+    Route::get('register', 'AdminAuth\RegisterController@showRegisterForm')->name('admin.register');
+    Route::post('register', 'AdminAuth\RegisterController@register')->name('admin_auth.register');
 });
 
 
@@ -37,4 +43,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('admin/home', 'HomeController@index')->name('home');
