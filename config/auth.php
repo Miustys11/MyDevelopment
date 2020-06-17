@@ -39,7 +39,7 @@ return [
     // https://qiita.com/tomoeine/items/40a966bf3801633cf90f
 
     'guards' => [
-        'user' => [
+        'web' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
@@ -48,6 +48,11 @@ return [
             'driver' => 'token',
             'provider' => 'users',
             'hash' => false,
+        ],
+        
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'users',
         ],
         
         'admin' => [
@@ -79,16 +84,12 @@ return [
             'model' => App\User::class,
         ],
         
-    'admins' => [
-        'driver' => 'eloquent',
-        'model' => App\Admin::class,
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class,
+            ],
+    
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
-    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -116,7 +117,7 @@ return [
     'admins' => [
         'provider' => 'admins',
         'table' => 'password_resets',
-        'expire' => 15
+        'expire' => 60
     ]
 
 ];
