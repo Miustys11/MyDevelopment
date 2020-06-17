@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.common')
 @section('title', '登録済みアイテムの一覧')
 
 @section('content')
