@@ -8,14 +8,14 @@
         <title>My Goods</title>
     </head>
     <body>
-        @extends('layouts.common')
+        @extends('layouts.admin')
         @section('title', '商品詳細')
         
         @section('content')
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 mx-auto">
-                        <h2>商品詳細</h2>
+                        <h2>商品詳細a</h2>
                         <form action="{{ action('Admin\GoodsController@create') }}" method="post" enctype="multipart/form-data">
                              @if (count($errors) > 0)
                                 <ul>

@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Admin;
 
-// 追記
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request; // 追記
 use Illuminate\Support\Facades\URL;
 
 class LoginController extends Controller
@@ -28,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/admin/goods';
     
     protected function redirectTo() { 
         
@@ -43,24 +42,24 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest:user')->except('logout');
+        $this->middleware('guest:admin')->except('logout'); // 変更
     }
     
-    /** 以下追記 **/
+    
     // public function showLoginForm()
     // {
-    //     return view('auth.login');
+    //     return view('admin.login');
     // }
 
     protected function guard()
     {
-        return \Auth::guard('user');
+        return \Auth::guard('admin');
     }
 
     public function logout(Request $request)
     {
-        \Auth::guard('user')->logout();
-        return redirect('/login');
+        \Auth::guard('admin')->logout();
+        return redirect('/admin/login');
     }
     
     public function showLoginForm() 
@@ -81,7 +80,9 @@ class LoginController extends Controller
             
         } 
         
-        return view('auth.login'); 
+        return view('admin.login'); 
         
     }
+    
 }
+

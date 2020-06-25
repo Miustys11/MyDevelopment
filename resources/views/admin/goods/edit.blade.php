@@ -1,4 +1,4 @@
-@extends('layouts.common')
+@extends('layouts.admin')
 @section('title', 'アイテムの編集')
 
 @section('content')

@@ -15,32 +15,49 @@
 //     return view('welcome');
 // });
 
+Auth::routes();
+
+Route::get('/', function () { return redirect('/home'); });
+
+// ユーザーログイン後
+Route::group(['middleware' => 'auth:user'], function() {
+    Route::get('/home', 'HomeController@index')->name('home');
+});
+
 
 // ルートミドルウェアとは
 // 認証済みユーザーのみアクセスを許可する
 
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('goods/create', 'Admin\GoodsController@add')->middleware('auth');
-    Route::post('goods/create', 'Admin\GoodsController@create')->middleware('auth');
-    Route::get('goods', 'Admin\GoodsController@index')->middleware('auth');
-    Route::get('goods/edit', 'Admin\GoodsController@edit')->middleware('auth');
-    Route::post('goods/edit', 'Admin\GoodsController@update')->middleware('auth');
-    Route::get('goods/delete', 'Admin\GoodsController@delete')->middleware('auth');
+    Route::get('goods/create', 'Admin\GoodsController@add');
+    Route::post('goods/create', 'Admin\GoodsController@create');
+    Route::get('goods', 'Admin\GoodsController@index');
+    Route::get('goods/edit', 'Admin\GoodsController@edit');
+    Route::post('goods/edit', 'Admin\GoodsController@update');
+    Route::get('goods/delete', 'Admin\GoodsController@delete');
     
     // AdminHome
-    Route::get('home', 'Admin\Auth\HomeController@index')->name('admin.home');
+    Route::get('home', 'Admin\HomeController@index')->name('admin.home');
     //login&logout
-    Route::get('login', 'Admin\Auth\LoginController@showLoginForm')->name('admin.login');
-    Route::post('login', 'Admin\Auth\LoginController@login')->name('admin.login');
-    Route::post('logout', 'Admin\Auth\LoginController@logout')->name('admin.logout');
+    Route::get('login', 'Admin\LoginController@showLoginForm')->name('admin.login');
+    Route::post('login', 'Admin\LoginController@login')->name('admin.login');
+    Route::post('logout', 'Admin\LoginController@logout')->name('admin.logout');
+    
+    // register
+    Route::get('register', 'Admin\RegisterController@showRegisterForm')->name('admin.register');
+    Route::post('register', 'Admin\LoginController@register')->name('admin.register');
+    
+    Route::get('goods/category', 'Admin\GoodsController@category');
+    // Route::post('goods/category/edit', 'Admin\GoodsController@editCategory');
+    // Route::post('goods/category/delete', 'Admin\GoodsController@deleteCategory');
+    
 });
+
+
 
 
 Route::get('/', 'GoodsController@index');
 Route::get('goods/{id}', 'GoodsController@show');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();

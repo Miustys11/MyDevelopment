@@ -26,7 +26,21 @@
                         <img src="{{ asset('storage/image/'  . $goods->image_path) }}">
                     </div>
                     <div class="details bottom" id="bottom">
-                     
+                        <div class="select-color">
+                            <h1>・カラーを選択</h1>
+                        </div>
+                        <div class="select-size">
+                            <h1>・サイズを選択</h1>
+                        </div>
+                         <button id="cart"><a href="#">カートに追加</a></button>
+                         <button id="confirm-stock"><a href="#">店舗の在庫を確認する</a></button>
+                         <ul class="link-more">
+                             <li><a href="#">はじめてのお客様へ</a></li>
+                             <li><a href="#">在庫について</a></li>
+                             <li><a href="#">返品・返金・交換について</a></li>
+                             <li><a href="#">法人のお客様へ</a></li>
+                             <li><a href="#">大量購入希望のお客様へ</a></li>
+                         </ul>
                     </div>
                 </div>
             </div>

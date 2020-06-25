@@ -40,18 +40,17 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto">
+                        <ul class="navbar-nav mr-auto" id="navbar">
                             {{-- 以下を追記 --}}
                             <!-- Authentication Links -->
                             {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
                             @guest
-                                <li><a class="nav-link" href="{{ route('admin.login') }}">{{ __('Login') }}</a></li>
+                                <li id="login-link"><a class="nav-link" href="{{ route('admin.login') }}">{{ __('messages.Login') }}</a></li>
                             {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
                             @else
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::guard('admin')->user()->name }} <span class="caret"></span> 
-                                        <!--Auth::user()->name-->
+                                        {{ Auth::user("admin")->name }} <span class="caret"></span> 
                                     </a>
     
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -66,8 +65,8 @@
                                         </form>
                                     </div>
                                 </li>
-                                @endguest
-                                {{-- 以上までを追記 --}}
+                            @endguest
+                            {{-- 以上までを追記 --}}
                         </ul>
 
                         <!-- Right Side Of Navbar -->

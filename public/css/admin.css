@@ -14,6 +14,12 @@ body {
   color: #fff !important;
 }
 
+#navbar {
+  width: 1110px;
+  display: block;
+  float: right;
+}
+
 .nav-link {
   color: #fff !important;
 }
@@ -45,4 +51,9 @@ body {
 
 .header-logo h1 {
   text-align: center;
+}
+
+#login-link {
+  list-style: none;
+  float: right;
 }

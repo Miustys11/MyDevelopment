@@ -11,9 +11,18 @@ class GoodsController extends Controller
     public function index(Request $request) {
         
         // すべてのアイテムを取得
-        $posts = Goods::all();
+        // $posts = Goods::all();
         
-        return view('goods.index', ['posts' => $posts]);
+        $cond_title = $request->cond_title;
+        if ($cond_title != '') {
+            // 検索されたら検索結果を取得する
+            $posts = Goods::where('name', $cond_title)->get();
+        } else {
+            // それ以外はすべてのニュースを取得する
+            $posts = Goods::all();
+        }
+        
+        return view('goods.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
     
     
@@ -27,4 +36,6 @@ class GoodsController extends Controller
         
         return view('goods.show', ['goods' => $goods]);
     }
+    
+    
 }

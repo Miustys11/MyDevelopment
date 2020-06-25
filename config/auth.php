@@ -14,8 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'user',
-        'passwords' => 'users',
+        'guard' => 'admin',
+        'passwords' => 'admins',
     ],
 
     /*
@@ -112,12 +112,12 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
-    ],
-    
-    'admins' => [
+        
+        'admins' => [
         'provider' => 'admins',
         'table' => 'password_resets',
         'expire' => 60
-    ]
+        ],
+    ],
 
 ];

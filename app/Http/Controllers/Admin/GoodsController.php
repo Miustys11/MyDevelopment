@@ -7,10 +7,25 @@ use App\Http\Controllers\Controller;
 
 use App\Goods;
 use App\GoodsHistory;
+use App\Category;
 use Carbon\Carbon;
 
 class GoodsController extends Controller
 {
+    
+    protected $goods;
+    
+    protected $category;
+    
+    const NUM_PER_PAGE = 10;
+    
+    function __construct(Goods $goods, Category $category)
+    {
+        $this->goods = $goods;
+        $this->category = $category;
+    }
+    
+    
     public function add() {
         return view('admin.goods.create');
     }
@@ -30,6 +45,8 @@ class GoodsController extends Controller
         } else {
             $goods->image_path = null;
         }
+        
+        $form['category_id'] = 1;
       
         // フォームから送信されてきた_tokenを削除する
         unset($form['_token']);
@@ -127,6 +144,19 @@ class GoodsController extends Controller
         $goods->delete();
       
         return redirect('admin/goods/');
+    }
+    
+    
+    /**
+     * カテゴリ一覧画面
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    
+    public function category(Request $request)
+    {
+        $list = $this->category->getCategoryList(self::NUM_PER_PAGE);
+        return view('admin.goods.category', compact('list'));
     }
 
 }
