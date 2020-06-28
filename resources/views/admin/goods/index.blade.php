@@ -32,16 +32,18 @@
                         <thead>
                             <tr>
                                 <th width="10%">ID</th>
+                                <th width="10%">カテゴリ名</th>
                                 <th width="20%">商品名</th>
                                 <th width="10%">値段</th>
                                 <th width="10%">サイズ</th>
-                                <th width="40%">説明</th>
+                                <th width="30%">説明</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $goods)
                                 <tr>
                                     <th>{{ $goods->id }}</th>
+                                    <th>{{ $goods->category->name }}</th>
                                     <td>{{ \Str::limit($goods->name, 100) }}</td>
                                     <td>{{ \Str::limit($goods->amount, 100) }}</td>
                                     <td>{{ \Str::limit($goods->size, 100) }}</td>

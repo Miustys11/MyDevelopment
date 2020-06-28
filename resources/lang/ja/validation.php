@@ -149,7 +149,8 @@ return [
         'name' => '商品名',
         'amount' => '値段',
         'size' => 'サイズ',
-        'description' => '説明'
+        'description' => '説明',
+        'category_id' => 'カテゴリ名'
     ],
 
 ];

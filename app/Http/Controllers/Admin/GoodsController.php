@@ -27,7 +27,9 @@ class GoodsController extends Controller
     
     
     public function add() {
-        return view('admin.goods.create');
+        $categories = Category::all();
+        
+        return view('admin.goods.create', [ 'categories' => $categories] );
     }
     
     public function create(Request $request) {
@@ -46,8 +48,6 @@ class GoodsController extends Controller
             $goods->image_path = null;
         }
         
-        $form['category_id'] = 1;
-      
         // フォームから送信されてきた_tokenを削除する
         unset($form['_token']);
           
@@ -92,11 +92,13 @@ class GoodsController extends Controller
         // Goods Modelからデータを取得する
         $goods = Goods::find($request->id);
         
+        $categories = Category::all();
+        
         if (empty($goods)) {
             abort(404);
         }
         
-        return view('admin.goods.edit', ['goods_form' => $goods]);
+        return view('admin.goods.edit', ['goods_form' => $goods, 'categories' => $categories]);
         
     }
     
@@ -155,8 +157,18 @@ class GoodsController extends Controller
     
     public function category(Request $request)
     {
-        $list = $this->category->getCategoryList(self::NUM_PER_PAGE);
-        return view('admin.goods.category', compact('list'));
+        
+        // 全てのカテゴリを取得
+        $categories = Category::all();
+        
+        return view('admin.goods.category', ['categories' => $categories]);
     }
+    
+    public function type(Request $request) {
+        
+        $types = CategoryType::all();
+        
+        return view('admin.type',['types' => $types]);
+    } 
 
 }

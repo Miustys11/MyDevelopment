@@ -48,8 +48,9 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('register', 'Admin\LoginController@register')->name('admin.register');
     
     Route::get('goods/category', 'Admin\GoodsController@category');
-    // Route::post('goods/category/edit', 'Admin\GoodsController@editCategory');
-    // Route::post('goods/category/delete', 'Admin\GoodsController@deleteCategory');
+   
+    Route::get('goods/type', 'Admin\GoodsController@type')->name('admin.type');
+    
     
 });
 
@@ -58,6 +59,8 @@ Route::group(['prefix' => 'admin'], function() {
 
 Route::get('/', 'GoodsController@index');
 Route::get('goods/{id}', 'GoodsController@show');
+Route::get('/mycart', 'GoodsController@myCart')->name('mycart');
+Route::post('/mycart', 'GoodsController@addMycart');
 
 
 Auth::routes();

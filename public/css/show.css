@@ -117,9 +117,13 @@ a:hover {
 
 .description p {
     width: 150px;
-    height: 76px;
+    height: 130px;
     margin: 15px;
     font-size: 10px;
+}
+
+.card-body {
+  margin: 30px 0;
 }
 
 .image {
@@ -143,11 +147,9 @@ a:hover {
 #cart {
   width: 180px;
   height: 100px;
-  background: #808080;
+  background-color: #808080;
   margin-bottom: 1px;
-}
-
-#cart a {
+  border: 0;
   color: #fff;
 }
 

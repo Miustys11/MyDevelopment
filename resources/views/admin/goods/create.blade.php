@@ -25,6 +25,16 @@
                                 </ul>
                             @endif
                             <div class="form-group row">
+                                <label class="col-md-2">カテゴリ名</label>
+                                <div class="col-md-10">
+                                    <select name="category_id">
+                                        @foreach($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label class="col-md-2">商品名</label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control" name="name" value="{{ old('name') }}">

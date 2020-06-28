@@ -9,6 +9,7 @@ class Goods extends Model
     protected $guarded = array('id');
     
     public static $rules  = array(
+        'category_id' => 'required',
         'name' => 'required',
         'amount' => 'required',
         'size' => 'required',
@@ -23,5 +24,10 @@ class Goods extends Model
         // 関連づいているレコードの一覧を取得
         // goodsテーブルに関連づいているhistoriesテーブルをすべて取得する
         return $this->hasMany('App\GoodsHistory');
+    }
+    
+    public function category() {
+        
+        return $this->belongsTo('App\Category');
     }
 }

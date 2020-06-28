@@ -16,6 +16,7 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            //　復元可能な削除（論理削除）
             $table->softDeletes();
             $table->timestamps();
         });
