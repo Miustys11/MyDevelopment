@@ -49,7 +49,7 @@ Route::group(['prefix' => 'admin'], function() {
     
     Route::get('goods/category', 'Admin\GoodsController@category');
    
-    Route::get('goods/type', 'Admin\GoodsController@type')->name('admin.type');
+    Route::get('goods/type', 'Admin\GoodsController@type')->name('type');
     
     
 });

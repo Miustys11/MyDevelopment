@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Goods;
 use App\GoodsHistory;
 use App\Category;
+use App\CategoryType;
 use Carbon\Carbon;
 
 class GoodsController extends Controller
@@ -168,7 +169,7 @@ class GoodsController extends Controller
         
         $types = CategoryType::all();
         
-        return view('admin.type',['types' => $types]);
+        return view('admin.goods.type',['types' => $types]);
     } 
 
 }
