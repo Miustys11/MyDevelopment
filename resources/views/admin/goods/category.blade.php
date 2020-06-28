@@ -12,7 +12,8 @@
                     <table class="table table-dark">
                         <thead>
                             <tr>
-                                <th width="30%">カテゴリ番号</th>
+                                <th width="15%">カテゴリ番号</th>
+                                <th width="15%">タイプ名</th>
                                 <th width="70%">カテゴリ名</th>
                             </tr>
                         </thead>
@@ -20,6 +21,7 @@
                             @foreach($categories as $category)
                                 <tr>
                                     <th>{{ $category->id }}</th>
+                                    <th>{{ $category->category_type->name }}</th>
                                     <td>{{ \Str::limit($category->name, 100) }}</td>
                                 </tr>
                             @endforeach

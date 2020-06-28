@@ -165,11 +165,17 @@ class GoodsController extends Controller
         return view('admin.goods.category', ['categories' => $categories]);
     }
     
+    /**
+     * カテゴリーータイプ画面表示
+     * 
+     */
+    
     public function type(Request $request) {
         
         $types = CategoryType::all();
         
         return view('admin.goods.type',['types' => $types]);
+        
     } 
 
 }

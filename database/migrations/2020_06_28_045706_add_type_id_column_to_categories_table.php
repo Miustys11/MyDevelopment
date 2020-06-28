@@ -14,7 +14,10 @@ class AddTypeIdColumnToCategoriesTable extends Migration
     public function up()
     {
         Schema::table('categories', function (Blueprint $table) {
+            
+            // CategoryType->id の時は、追加するときの名前は category_type_idのように大文字で_で区切るようにするのがルール
             $table->unsignedInteger('type_id')->after('id');
+            
         });
     }
 

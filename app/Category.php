@@ -14,5 +14,10 @@ class Category extends Model
     protected $fillable = ['name'];
     // 削除、作成、更新した日がわかるように$datesでdeleted_atカラムを作成
     protected $dates = ['deleted_at', 'created_at', 'updated_at'];
+    
+    public function category_type() {
+        
+        return $this->belongsTo('App\CategoryType', 'type_id');
+    }
 
 }
