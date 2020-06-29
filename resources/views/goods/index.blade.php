@@ -51,70 +51,21 @@
                     </li>
                 </ul>
                 <div class="sub-category">
-                    <div class="sub shirts,blouse">
-                        <a href="#">
-                            <img alt="shirts,blouse" src="{{ asset('/img/category/shirts2.jpg') }}">
-                            <div class="float1">
-                                <h2>シャツ・ブラウス</h2>
+                    @foreach($sub_categories as $sub_category)
+                        @if($sub_category->category->type_id === 1)
+                            @php
+                                $image = '/img/sub_category/' . $sub_category->category->type_id . '_' . $sub_category->name . '.jpg'
+                            @endphp
+                            <div class="sub">
+                                <a href="/sub_category/{{ $sub_category->id }}" >
+                                    <img alt="{{ $sub_category->name }}" src="{{ asset($image) }}">
+                                    <div class="float1">
+                                        <h2>{{ $sub_category->name }}</h2>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                    <div class="sub t-shirts">
-                        <a href="#">
-                            <img alt="t-shirts" src="{{ asset('/img/category/t-shirts2.jpg') }}">
-                            <div class="float2">
-                                <h2>Tシャツ</h2>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="sub knit">
-                        <a href="#">
-                            <img alt="knit" src="{{ asset('/img/category/knit.jpg') }}">
-                            <div class="float2">
-                                <h2>ニット</h2>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="sub jeans">
-                        <a href="#">
-                            <img alt="jeans" src="{{ asset('/img/category/jeans3.jpg') }}">
-                            <div class="float2">
-                                <h2>ジーンズ</h2>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="sub jeans">
-                        <a href="#">
-                            <img alt="jeans" src="{{ asset('/img/category/skirt.jpg') }}">
-                            <div class="float2">
-                                <h2>スカート</h2>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="sub jeans">
-                        <a href="#">
-                            <img alt="jeans" src="{{ asset('/img/category/dress.jpg') }}">
-                            <div class="float2">
-                                <h2>ワンピース</h2>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="sub jeans">
-                        <a href="#">
-                            <img alt="jeans" src="{{ asset('/img/category/hoodie.jpg') }}">
-                        <div class="float2">
-                            <h2>スウェット</h2>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="sub jeans">
-                        <a href="#">
-                            <img alt="jeans" src="{{ asset('/img/category/jacket2.jpg') }}">
-                            <div class="float2">
-                                <h2>ジャケット</h2>
-                            </div>
-                        </a>
-                    </div>
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>

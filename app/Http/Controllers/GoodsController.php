@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Goods;
 use App\Cart;
+use App\SubCategory;
 
 class GoodsController extends Controller
 {
 
     public function index(Request $request) {
+        
+        $sub_categories = SubCategory::all();
         
         // すべてのアイテムを取得
         // $posts = Goods::all();
@@ -24,7 +27,7 @@ class GoodsController extends Controller
             $posts = Goods::all();
         }
         
-        return view('goods.index', ['posts' => $posts, 'cond_title' => $cond_title]);
+        return view('goods.index', ['posts' => $posts, 'cond_title' => $cond_title, 'sub_categories' => $sub_categories]);
     }
     
     
@@ -73,9 +76,17 @@ class GoodsController extends Controller
         
    }
    
-   public function getCategory(Request $request) {
+   /**
+    * 
+    * カテゴリー画面表示
+    * 
+    */
+   
+   public function getSubCategory(Request $request) {
        
-      return view('goods.category');
+    $goods = Goods::where('sub_category_id', $request->sub_category_id)->get();
+    
+      return view('goods.category', ['goods' => $goods]);
    }
     
 }

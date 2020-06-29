@@ -62,7 +62,7 @@ Route::get('/', 'GoodsController@index');
 Route::get('goods/{id}', 'GoodsController@show');
 Route::get('/mycart', 'GoodsController@myCart')->name('mycart');
 Route::post('/mycart', 'GoodsController@addMycart');
-Route::get('/category', 'GoodsController@getCategory');
+Route::get('/sub_category/{sub_category_id}', 'GoodsController@getSubCategory');
 
 
 Auth::routes();
