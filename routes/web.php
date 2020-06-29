@@ -50,6 +50,7 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('goods/category', 'Admin\GoodsController@category');
    
     Route::get('goods/type', 'Admin\GoodsController@type')->name('admin.type');
+    Route::get('goods/subcategory', 'Admin\GoodsController@subCategory')->name('admin.subCategory');
     
     
 });
@@ -61,6 +62,7 @@ Route::get('/', 'GoodsController@index');
 Route::get('goods/{id}', 'GoodsController@show');
 Route::get('/mycart', 'GoodsController@myCart')->name('mycart');
 Route::post('/mycart', 'GoodsController@addMycart');
+Route::get('/category', 'GoodsController@getCategory');
 
 
 Auth::routes();

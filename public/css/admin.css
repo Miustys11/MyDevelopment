@@ -14,12 +14,6 @@ body {
   color: #fff !important;
 }
 
-#navbar {
-  width: 1110px;
-  display: block;
-  float: right;
-}
-
 .nav-link {
   color: #fff !important;
 }
@@ -45,15 +39,3 @@ body {
   background-color: rgba(0, 0, 0, 0.25);
 }
 
-.header-logo {
-  margin: 90px 0;
-}
-
-.header-logo h1 {
-  text-align: center;
-}
-
-#login-link {
-  list-style: none;
-  float: right;
-}

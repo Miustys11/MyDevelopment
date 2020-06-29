@@ -31,7 +31,7 @@
             <div class="header-container">
                 <div class="header-logo">
                     <a href="{{ action('GoodsController@index') }}">
-                        <img alt="UNIQLO" src="{{ asset('/img/uniqlo.png') }}">
+                        <img alt="UNIQLO" src="{{ asset('/img/logo/uniqlo.png') }}">
                     </a>
                 </div>
                 <ul class="clearflex">

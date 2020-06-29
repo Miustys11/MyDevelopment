@@ -25,11 +25,31 @@
                                 </ul>
                             @endif
                             <div class="form-group row">
+                                <label class="col-md-2">タイプ名</label>
+                                <div class="col-md-10">
+                                    <select name="category_type_id">
+                                        @foreach($types as $type)
+                                        <option value="{{ $type->id }}">{{ $type->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label class="col-md-2">カテゴリ名</label>
                                 <div class="col-md-10">
                                     <select name="category_id">
                                         @foreach($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-2">サブカテゴリ名</label>
+                                <div class="col-md-10">
+                                    <select name="sub_category_id">
+                                        @foreach($sub_categories as $sub_category)
+                                        <option value="{{ $sub_category->id }}">{{ $sub_category->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

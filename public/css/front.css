@@ -1,6 +1,7 @@
 body {
   color: #000;
-  background-color: #e6e6e6;
+  /*background-color: #e6e6e6;*/
+    background-color: #fff;
 }
 
 .container a {
@@ -53,15 +54,15 @@ a:hover {
 .header-logo a {
   width: 50px;
   height: 50px;
-}
+}å
 
 .clearflex {
   width: 389px;
   height: 50px;
   display: flex;
   align-items: center;
-  padding-left: 0;
   margin-bottom: 0;
+  position: relative;
 }
 
 .clearflex li {
@@ -92,6 +93,15 @@ a:hover {
   color: #ff0000;
 }
 
+.login {
+  width: 210px;
+  height: 50px;
+  display: inline-block;
+  position: absolute;
+  top: 15px;
+  left: 1100px;
+}
+
 /* ここまでheaderのcss */
 
 
@@ -115,10 +125,29 @@ a:hover {
   margin: 0 auto;
 }
 
+.goods-container h1 {
+    color: #333;
+    font-size: 30px;
+}
+
+.goods-container li {
+  list-style: none;
+}
+
+.slide {
+  width: 980px;
+  height: 500px;
+}
+
+.slide img {
+  width: 980px;
+  height: 500px;
+}
+
 #popular-goods {
   font-size: 30px;
   margin: 40px 0 20px 0;
-  color: #111;
+  color: #333;
 }
 
 #goods-name {
@@ -164,6 +193,70 @@ a:hover {
   width: 316px;
   margin: 10px 37px 0 5px;
 }
+
+.category {
+  width: 960px;
+  height: 50px;
+  padding-left: 0;
+  margin-top: 50px;
+  border-bottom: solid 1px #ddd;
+}
+
+.category h2 {
+  font-size: 25px;
+  margin: 0 auto;
+}
+
+.category li {
+  width: 240px;
+  height: 50px;
+  float: left;
+  display: flex;
+}
+
+.category a {
+    text-align: center;
+}
+
+.sub {
+  width: 240px;
+  height: 298px;
+  display: inline-block;
+  float: left;
+  position: relative;
+}
+
+.sub img {
+  width: 230px;
+  height: 288px;
+  margin: 0 10px;
+  opacity: 0.7;
+}
+
+.float1 {
+  position: absolute;
+  top: 130px;
+  left: 40px
+}
+
+.float1 h2 {
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.float2 {
+  position: absolute;
+  top: 130px;
+  left: 90px
+}
+
+.float2 h2 {
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
 
 /* ここまで goods/index.blade.php のcss */
 

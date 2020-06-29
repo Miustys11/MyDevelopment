@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Goods;
 use App\GoodsHistory;
 use App\Category;
+use App\SubCategory;
 use App\CategoryType;
 use Carbon\Carbon;
 
@@ -29,8 +30,10 @@ class GoodsController extends Controller
     
     public function add() {
         $categories = Category::all();
+        $types = CategoryType::all();
+        $sub_categories = SubCategory::all();
         
-        return view('admin.goods.create', [ 'categories' => $categories] );
+        return view('admin.goods.create', [ 'categories' => $categories, 'types' => $types, 'sub_categories' => $sub_categories] );
     }
     
     public function create(Request $request) {
@@ -94,12 +97,14 @@ class GoodsController extends Controller
         $goods = Goods::find($request->id);
         
         $categories = Category::all();
+        $types = CategoryType::all();
+        $sub_categories = SubCategory::all();
         
         if (empty($goods)) {
             abort(404);
         }
         
-        return view('admin.goods.edit', ['goods_form' => $goods, 'categories' => $categories]);
+        return view('admin.goods.edit', ['goods_form' => $goods, 'categories' => $categories, 'types' => $types, 'sub_categories' => $sub_categories]);
         
     }
     
@@ -166,7 +171,7 @@ class GoodsController extends Controller
     }
     
     /**
-     * カテゴリーータイプ画面表示
+     * カテゴリータイプ画面表示
      * 
      */
     
@@ -175,6 +180,19 @@ class GoodsController extends Controller
         $types = CategoryType::all();
         
         return view('admin.goods.type',['types' => $types]);
+        
+    } 
+    
+    /**
+     * サブカテゴリー画面表示
+     * 
+     */
+    
+    public function subCategory(Request $request) {
+        
+        $sub_categories = SubCategory::all();
+        
+        return view('admin.goods.subcategory',['sub_categories' => $sub_categories]);
         
     } 
 

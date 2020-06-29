@@ -15,4 +15,6 @@ class CategoryType extends Model
         
         return $this->hasMany('App\Category');
     }
+    
+    
 }

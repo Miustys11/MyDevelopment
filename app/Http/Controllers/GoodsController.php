@@ -72,5 +72,10 @@ class GoodsController extends Controller
         return redirect()->route('mycart')->with('status', 'カートに追加しました！');
         
    }
+   
+   public function getCategory(Request $request) {
+       
+      return view('goods.category');
+   }
     
 }
