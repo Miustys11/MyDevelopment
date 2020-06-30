@@ -41,6 +41,9 @@
                     <li><a href="#">BABY</a></li>
                     <li><a href="#">CAMPANY</a></li>
                 </ul>
+                <div class="cart-item">
+                    <a href="#"><img src="{{ asset('/img/cart/cart1.png')}}"></a>
+                </div>
                 <div class="login">
                     {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
                         @if(!Auth::guard('user')->check())

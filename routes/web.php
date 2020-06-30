@@ -60,8 +60,14 @@ Route::group(['prefix' => 'admin'], function() {
 
 Route::get('/', 'GoodsController@index');
 Route::get('goods/{id}', 'GoodsController@show');
-Route::get('/mycart', 'GoodsController@myCart')->name('mycart');
-Route::post('/mycart', 'GoodsController@addMycart');
+
+// カート表示
+Route::get('/mycart', 'CartController@myCart')->name('mycart');
+Route::post('/mycart', 'CartController@addMycart');
+Route::post('/mycart/reduce', 'CartController@reduceMyCart');
+Route::get('/mycartlist', 'CartController@myCartList')->name('mycartlist');
+
+// サブカテゴリ表示
 Route::get('/sub_category/{sub_category_id}', 'GoodsController@getSubCategory');
 
 

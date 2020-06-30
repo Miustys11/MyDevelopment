@@ -39,3 +39,16 @@ body {
   background-color: rgba(0, 0, 0, 0.25);
 }
 
+.header-logo {
+  margin: 90px 0;
+}
+
+.header-logo h1 {
+  text-align: center;
+}
+
+#login-link {
+  list-style: none;
+  float: right;
+}
+
