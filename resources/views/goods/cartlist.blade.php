@@ -5,7 +5,7 @@
    <div class="">
         <div class="mx-auto" style="max-width:1200px">
             <h1 class="text-center font-weight-bold" style="color:#555555;  font-size:1.2em; padding:24px 0px;">
-            {{ Auth::user()->name }}さんのカートの中身一覧</h1>
+            {{ Auth::guard("user")->user()->name }}さんのカートの中身一覧</h1>
             <div class="">
                 <div class="d-flex flex-row flex-wrap">
 

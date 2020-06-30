@@ -18,9 +18,9 @@
                         <div class="description">
                             <p>{{ $goods->description }}</p>
                         </div>
-                        <div class="card-body" style="color: red;">
-                            {{ $goods->amount }}円
-                        </div>
+                        <!--<div class="card-body" style="color: red;">-->
+                        <!--    {{ $goods->amount }}円-->
+                        <!--</div>-->
                     </div>
                     <div class="image">
                         <img src="{{ asset('storage/image/'  . $goods->image_path) }}">

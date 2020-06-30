@@ -29,9 +29,9 @@
                     <div class="goods-name">
                         <h1><a href="/goods/{{ $post->id }}">{{ str_limit($post->name, 150) }}</a></h1>
                     </div>
-                    <div class="amount">
-                        <p>¥{{ str_limit($post->amount, 150) }}</p>
-                    </div>
+                    <!--<div class="amount">-->
+                    <!--    <p>¥{{ str_limit($post->amount, 150) }}</p>-->
+                    <!--</div>-->
                 </div>
             @endforeach
             <div clss="goods-category">

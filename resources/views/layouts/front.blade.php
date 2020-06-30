@@ -39,10 +39,10 @@
                     <li><a href="#">MAN</a></li>
                     <li><a href="#">KIDS</a></li>
                     <li><a href="#">BABY</a></li>
-                    <li><a href="#">CAMPANY</a></li>
+                    <li><a href="{{ action('ContactController@index')}}">CONTACT</a></li>
                 </ul>
                 <div class="cart-item">
-                    <a href="#"><img src="{{ asset('/img/cart/cart1.png')}}"></a>
+                    <a href="{{ action('CartController@myCartList')}}"><img src="{{ asset('/img/cart/cart1.png')}}"></a>
                 </div>
                 <div class="login">
                     {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}

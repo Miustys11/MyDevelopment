@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Contact;
 
 class ContactController extends Controller
 {
@@ -58,12 +59,14 @@ class ContactController extends Controller
             $contacts = new Contact;
             $form = $request->all();
             
-            $goods->title = $form['email'];
-            $goods->title = $form['title'];
-            $goods->title = $form['body'];
+            $contacts->email = $form['email'];
+            $contacts->title = $form['title'];
+            $contacts->body = $form['body'];
 
             //再送信を防ぐためにトークンを再発行
             $request->session()->regenerateToken();
+            
+            $contacts->save();
 
             //送信完了ページのviewを表示
             return view('contact.thanks');

@@ -150,7 +150,9 @@ return [
         'amount' => '値段',
         'size' => 'サイズ',
         'description' => '説明',
-        'category_id' => 'カテゴリ名'
+        'email' => 'Eメール',
+        'title' => 'タイトル',
+        'body' => 'お問い合わせ内容',
     ],
 
 ];

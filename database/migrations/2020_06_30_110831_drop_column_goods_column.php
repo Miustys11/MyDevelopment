@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContactsTable extends Migration
+class DropColumnGoodsColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateContactsTable extends Migration
      */
     public function up()
     {
-        Schema::create('contacts', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('email');
-            $table->string('title');
-            $table->text('body');
-            $table->timestamps();
+        Schema::table('goods', function (Blueprint $table) {
+            $table->dropColumn('amount');
+            $table->dropColumn('size');
         });
     }
 
@@ -29,6 +26,9 @@ class CreateContactsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contacts');
+        Schema::table('goods', function (Blueprint $table) {
+            $table->boolean('amount')->default(false);
+            $table->boolean('size')->default(false);
+        });
     }
 }
