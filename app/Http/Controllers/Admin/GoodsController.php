@@ -51,7 +51,7 @@ class GoodsController extends Controller
         } else {
             $goods->image_path = null;
         }
-        
+
         // フォームから送信されてきた_tokenを削除する
         unset($form['_token']);
           

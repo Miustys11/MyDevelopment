@@ -1,4 +1,4 @@
-@extends('layout.front')
+@extends('layouts.front')
 
 @section('content')
 <form method="POST" action="{{ route('contact.send') }}">

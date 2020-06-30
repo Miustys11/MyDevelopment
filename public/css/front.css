@@ -273,3 +273,37 @@ a:hover {
 
 
 /* ここまで goods/index.blade.php のcss */
+
+/* ここから contact/index.blade.php のcss */
+
+.contact-container {
+  width: 960px;
+  height: 700px;
+  margin: 0 auto;
+}
+.contact-box {
+  width: 600px;
+  height: 70px;
+  margin: 0 auto;
+}
+
+.contact-box label {
+  margin-top: 30px;
+  margin-right: 30px;
+}
+
+.contact-box input {
+  width: 400px;
+}
+
+#title-labal {
+  margin-right: 70px;
+}
+
+#cantact-body {
+  width: 400px;
+  height: 200px;
+  vertical-align:top;
+}
+/* ここまで contact/index.blade.php のcss */
+
