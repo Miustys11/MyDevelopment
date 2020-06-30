@@ -70,5 +70,15 @@ Route::get('/mycartlist', 'CartController@myCartList')->name('mycartlist');
 // サブカテゴリ表示
 Route::get('/sub_category/{sub_category_id}', 'GoodsController@getSubCategory');
 
+// お問い合わせフォーム
+//入力ページ
+Route::get('/contact', 'ContactController@index')->name('contact.index');
+
+//確認ページ
+Route::post('/contact/confirm', 'ContactController@confirm')->name('contact.confirm');
+
+//送信完了ページ
+Route::post('/contact/thanks', 'ContactController@send')->name('contact.send');
+
 
 Auth::routes();
