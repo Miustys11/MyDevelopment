@@ -16,11 +16,24 @@
                         <div class="mycart_box">
                             <p>ユーザーID：{{$cart->user_id}}</p>
                             <p>アイテムID：{{$cart->goods_id}}</p>
-                            <div style="width: 65px; height: 30px; margin: 0 auto;">
-                                <input type="button" value="-" id="minus">
-                                <div id="count" style="display: inline-block;">0</div>
-                                <input type="button" value="+" id="plus">
-                            </div>
+                            <!--数量変更-->
+                            <form action="{{ action('CartController@updateCart') }}" method="post">
+                                <table border="0" cellspacing="4" cellpadding="0">
+                                <tr>
+                                <td>数量
+                                    <select name="qty">
+                                        @foreach($datas as $data)
+                                        <option value="{{ $data }}" {{ $cart->qty == $data ? "selected" : "" }}>{{ $data }}</option>
+                                        @endforeach
+                                    </select>
+                                </td>
+                                </tr>
+                                </table>
+                                <input type="submit" value="変更">
+                                {{ csrf_field() }}
+                                {{Form::hidden('goods_id', $cart->goods_id )}}
+                            </form>
+                            <!--数量変更-->
                             <form style="width: 170px; margin: 0 auto;" action="{{ action('CartController@deleteCart') }}" method="post">
                                 @csrf
                                 {{Form::hidden('goods_id', $cart->goods_id )}}
@@ -28,7 +41,8 @@
                             </form>
                         </div>
                     @endforeach
-                    <form class="text-center p-2" style="margin: 0 auto;">
+                    
+                    <form class="text-center p-2" style="margin: 0 530px;">
                         個数：個<br>
                         <p style="font-size:1.2em; font-weight:bold; margin-bottom: 10px;">合計金額：円</p>  
                     </form>
@@ -46,34 +60,3 @@
    </div>
 </div>
 @endsection
-<script type="text/javascript">
-window.addEventListener("load", function(){
-   
-   var count = document.getElementById("count");
-   var plusbtn = document.getElementById("plus");
-   var minusbtn = document.getElementById("minus");
-   console.log(count)
-   // 初期値
-   var number = 0;
-   
-   // 1ずつ増える
-   plusbtn.onclick = function (){
-          number ++;
-          count.innerHTML = number;
-   };
-   
-   // 1ずつ減る
-   minusbtn.onclick = function (){
-      
-      if (number === 0) {
-         number = 0;
-         count.innerHTML = number;
-      }else{
-         number --;
-         count.innerHTML = number;
-      }
-   }
-})
-    
-    
-</script>

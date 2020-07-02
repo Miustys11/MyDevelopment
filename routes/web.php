@@ -82,6 +82,7 @@ Route::post('/mycart', 'CartController@addMycart');
 Route::post('/mycart/reduce', 'CartController@reduceMyCart');
 Route::get('/mycartlist', 'CartController@myCartList')->name('mycartlist');
 Route::post('/cartdelete','CartController@deleteCart')->name('mycart.delete');
+Route::post('/cartupdate','CartController@updateCart')->name('mycart.update');
 
 // サブカテゴリ表示
 Route::get('/sub_category/{sub_category_id}', 'GoodsController@getSubCategory');

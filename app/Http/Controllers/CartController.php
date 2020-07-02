@@ -55,7 +55,7 @@ class CartController extends Controller
             if($cart->qty === 1) {
                 $cart->delete();
             }else{
-                $cart->qty-=1;
+                $cart->qty -= 1;
                 $cart->save();
             }
             
@@ -70,11 +70,34 @@ class CartController extends Controller
         // 現在認証されているユーザーのIDを取得
         $user_id = Auth::id();
 
-        // Cart Model の user_id を取得 
+        // Cart Model の user_id と goods_id を取得
         $carts = Cart::where('user_id', $user_id)->get();
         
+        $datas = ['0','1','2','3','4','5','6','7','8','9','10'];
+
         
-        return view('goods.cartlist', ['carts' => $carts]);
+        return view('goods.cartlist', ['carts' => $carts, 'datas' => $datas]);
+    }
+    
+    
+    // カートの数量をアップデート
+    public function updateCart(Request $request) {
+        
+        // 現在認証されているユーザーのIDを取得
+        $user_id = Auth::id();
+        $goods_id = $request->goods_id;
+        
+        // Cart Model の user_id を取得
+        $carts = Cart::where('user_id', $user_id)->get();
+    
+        if ($request->qty == "0") { 
+            Cart::where('user_id', $user_id)->where('goods_id',$goods_id)->delete();
+            return redirect()->route('mycartlist')->with('status', 'カートから商品を削除しました！');
+        } else {
+            Cart::where('user_id', $user_id)->where('goods_id',$goods_id)->update(['qty' => $request->qty]);
+            return redirect('mycartlist');
+        }
+
     }
     
     // カートの商品を消す
@@ -88,8 +111,8 @@ class CartController extends Controller
             return redirect()->route('mycartlist')->with('status', 'カートから一つの商品を削除しました！');
         }else{
             return redirect()->route('mycartlist')->with('status', '削除に失敗しました' + $user_id + $goods_id );
-            // return redirect()->route('mycartlist')->with('status', $goods_id);
         }
     }
+
 
 }
