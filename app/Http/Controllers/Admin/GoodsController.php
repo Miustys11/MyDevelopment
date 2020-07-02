@@ -167,7 +167,7 @@ class GoodsController extends Controller
         // 全てのカテゴリを取得
         $categories = Category::all();
         
-        return view('admin.goods.category', ['categories' => $categories]);
+        return view('admin.goods.category.category', ['categories' => $categories]);
     }
     
     /**
@@ -179,7 +179,7 @@ class GoodsController extends Controller
         
         $types = CategoryType::all();
         
-        return view('admin.goods.type',['types' => $types]);
+        return view('admin.goods.category.type',['types' => $types]);
         
     } 
     
@@ -192,7 +192,7 @@ class GoodsController extends Controller
         
         $sub_categories = SubCategory::all();
         
-        return view('admin.goods.subcategory',['sub_categories' => $sub_categories]);
+        return view('admin.goods.category.subcategory',['sub_categories' => $sub_categories]);
         
     } 
 

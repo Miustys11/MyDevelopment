@@ -47,10 +47,25 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('register', 'Admin\RegisterController@showRegisterForm')->name('admin.register');
     Route::post('register', 'Admin\LoginController@register')->name('admin.register');
     
-    Route::get('goods/category', 'Admin\GoodsController@category');
-   
+    
+    // type (like... WOMAN,MAN etc...)
     Route::get('goods/type', 'Admin\GoodsController@type')->name('admin.type');
+    
+    // category (like... TOPS,BOTTOM etc...)
+    Route::get('goods/category', 'Admin\GoodsController@category');
+    
+    // subcategory (like... T-SHIRTS,SKIRT etc..)
     Route::get('goods/subcategory', 'Admin\GoodsController@subCategory')->name('admin.subCategory');
+    
+    
+    // goodsvariation
+    Route::post('goods/variation/create', 'Admin\GoodsVariationController@create')->name('admin.variation.create');
+
+    Route::get('goods/variation/create', 'Admin\GoodsVariationController@add')->name('admin.variation.add');
+
+    Route::get('goods/variation', 'Admin\GoodsVariationController@index')->name('admin.variation');
+    Route::get('goods/variation/edit', 'Admin\GoodsVariationController@edit')->name('admin.variation.edit');
+    Route::post('goods/variation/edit', 'Admin\GoodsVariationController@update')->name('admin.variation.update');
     
     
 });
@@ -66,6 +81,7 @@ Route::get('/mycart', 'CartController@myCart')->name('mycart');
 Route::post('/mycart', 'CartController@addMycart');
 Route::post('/mycart/reduce', 'CartController@reduceMyCart');
 Route::get('/mycartlist', 'CartController@myCartList')->name('mycartlist');
+Route::post('/cartdelete','CartController@deleteCart')->name('mycart.delete');
 
 // サブカテゴリ表示
 Route::get('/sub_category/{sub_category_id}', 'GoodsController@getSubCategory');
@@ -79,6 +95,5 @@ Route::post('/contact/confirm', 'ContactController@confirm')->name('contact.conf
 
 //送信完了ページ
 Route::post('/contact/thanks', 'ContactController@send')->name('contact.send');
-
 
 Auth::routes();

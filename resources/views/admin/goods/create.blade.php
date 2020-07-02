@@ -61,23 +61,6 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-md-2">値段</label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" name="amount" value="{{ old('amount') }}">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-md-2">サイズ</label>
-                                <div class="col-md-10">
-                                    <input type="radio" class="radio" name="size" value="XS" {{ (old("size", "XS") === "XS" ) ? "checked" : "" }}>JP XS
-                                    <input type="radio" class="radio"  name="size" value="S" {{ (old("size") === "S" ) ? "checked" : "" }}>JP S
-                                    <input type="radio" class="radio"  name="size" value="M" {{ (old("size") === "M" ) ? "checked" : "" }}>JP M
-                                    <input type="radio" class="radio"  name="size" value="L" {{ (old("size") === "L" ) ? "checked" : "" }}>JP L
-                                    <input type="radio" class="radio"  name="size" value="XL" {{ (old("size") === "XL" ) ? "checked" : "" }}>JP XL
-                                    <input type="radio" class="radio"  name="size" value="2XL" {{ (old("size") === "2XL" ) ? "checked" : "" }}>JP 2XL
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <label class="col-md-2">説明</label>
                                 <div class="col-md-10">
                                     <textarea class="form-control" name="description" rows="20">{{ old('description') }}</textarea>

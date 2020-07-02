@@ -43,8 +43,8 @@ class CartController extends Controller
         
     }
 
-    public function reduceMyCart(Request $request)
-    {
+    public function reduceMyCart(Request $request) {
+        
         $user_id = Auth::id(); 
         $goods_id = $request->goods_id;
 
@@ -66,8 +66,7 @@ class CartController extends Controller
     }
     
     // ユーザーの商品一覧画面
-    public function myCartList(Request $request)
-    {
+    public function myCartList(Request $request) {
         // 現在認証されているユーザーのIDを取得
         $user_id = Auth::id();
 
@@ -76,6 +75,21 @@ class CartController extends Controller
         
         
         return view('goods.cartlist', ['carts' => $carts]);
+    }
+    
+    // カートの商品を消す
+    public function deleteCart(Request $request) {
+        
+        $user_id = Auth::id();
+        $goods_id = $request->goods_id;
+        $delete = Cart::where('user_id', $user_id)->where('goods_id',$goods_id)->delete();
+       
+        if($delete > 0){
+            return redirect()->route('mycartlist')->with('status', 'カートから一つの商品を削除しました！');
+        }else{
+            return redirect()->route('mycartlist')->with('status', '削除に失敗しました' + $user_id + $goods_id );
+            // return redirect()->route('mycartlist')->with('status', $goods_id);
+        }
     }
 
 }

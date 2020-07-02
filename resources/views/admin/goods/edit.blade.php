@@ -57,23 +57,6 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="amount">値段</label>
-                        <div class="col-md-10">
-                            <input type="text" class="form-control" name="amount" value="{{ $goods_form->amount }}">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-2" for="size">サイズ</label>
-                        <div class="col-md-10">
-                            <input type="radio" name="size" value="XS" {{ (old("size", $goods_form->size) === "XS") ? "checked" : "" }}>JP XS
-                            <input type="radio" name="size" value="S" {{ (old("size", $goods_form->size) === "S") ? "checked" : "" }}>JP S
-                            <input type="radio" name="size" value="M" {{ (old("size", $goods_form->size) === "M") ? "checked" : "" }}>JP M
-                            <input type="radio" name="size" value="L" {{ (old("size", $goods_form->size) === "L") ? "checked" : "" }}>JP L
-                            <input type="radio" name="size" value="XL" {{ (old("size", $goods_form->size) === "XL") ? "checked" : "" }}>JP XL
-                            <input type="radio" name="size" value="2XL" {{ (old("size", $goods_form->size) === "2XL") ? "checked" : "" }}>JP 2XL
-                        </div>
-                    </div>
-                    <div class="form-group row">
                         <label class="col-md-2" for="description">説明</label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="description" rows="20">{{ $goods_form->description }}</textarea>

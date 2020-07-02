@@ -18,24 +18,24 @@
                         </div>
                     </div>
             </form>
-            <h1 id="popular-goods">人気の商品</h1>
-            @foreach ($posts as $post)
-                <div class="goods-box">
-                    <div class="image">
-                        @if ($post->image_path)
-                            <img src="{{ asset('storage/image/'  . $post->image_path) }}">
-                        @endif
-                    </div>
-                    <div class="goods-name">
-                        <h1><a href="/goods/{{ $post->id }}">{{ str_limit($post->name, 150) }}</a></h1>
-                    </div>
+            <!--<h1 id="popular-goods">人気の商品</h1>-->
+            <!--@foreach ($posts as $post)-->
+            <!--    <div class="goods-box">-->
+            <!--        <div class="image">-->
+            <!--            @if ($post->image_path)-->
+            <!--                <img src="{{ asset('storage/image/'  . $post->image_path) }}">-->
+            <!--            @endif-->
+            <!--        </div>-->
+            <!--        <div class="goods-name">-->
+            <!--            <h1><a href="/goods/{{ $post->id }}">{{ str_limit($post->name, 150) }}</a></h1>-->
+            <!--        </div>-->
                     <!--<div class="amount">-->
                     <!--    <p>¥{{ str_limit($post->amount, 150) }}</p>-->
                     <!--</div>-->
-                </div>
-            @endforeach
+            <!--    </div>-->
+            <!--@endforeach-->
             <div clss="goods-category">
-                <h1>商品カテゴリ</h1>
+                <h1 style="margin-top: 50px;">商品カテゴリ</h1>
                 <ul class="category">
                     <li>
                         <h2><a href="#">WOMAN</a></h2>

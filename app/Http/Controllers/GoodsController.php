@@ -50,7 +50,7 @@ class GoodsController extends Controller
    
    public function getSubCategory(Request $request) {
        
-    $goods = Goods::where('sub_category_id', $request->sub_category_id)->get();
+      $goods = Goods::where('sub_category_id', $request->sub_category_id)->get();
     
       return view('goods.category', ['goods' => $goods]);
    }

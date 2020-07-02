@@ -11,8 +11,6 @@ class Goods extends Model
     public static $rules  = array(
         'category_id' => 'required',
         'name' => 'required',
-        'amount' => 'required',
-        'size' => 'required',
         'description' => 'required'
     );
     
