@@ -213,7 +213,7 @@ a:hover {
   margin: 10px 37px 0 5px;
 }
 
-.category {
+#category {
   width: 960px;
   height: 50px;
   padding-left: 0;
@@ -235,6 +235,10 @@ a:hover {
 
 .category a {
   text-align: center;
+}
+
+.sub-category {
+  margin-top: 40px;
 }
 
 .sub {
@@ -320,4 +324,45 @@ a:hover {
   height: 70px;
   margin: 0 auto;
 }
+
+/* ここまで contact/index.blade.php のcss */
+
+/* ここから goods/categoryblade.php のcss */
+
+.category {
+  width: 960px;
+  height: 1000px;
+  margin: 0 auto;
+}
+
+.goods-box {
+  width: 310px;
+  height: 450px;
+  margin: 50px 10px 0 0;
+  display: inline-block;
+  float: left;
+}
+
+.img {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.img img {
+  width: 300px;
+  height: 358px;
+}
+
+.goodsName {
+  width: 316px;
+  margin: 10px 37px 0 0;
+}
+
+.goodsName h1 {
+  width: 316px;
+  font-size: 20px;
+  margin: 0;
+}
+
+/* ここまで goods/cateegory.blade.php のcss */
 

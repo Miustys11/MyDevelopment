@@ -1,3 +1,59 @@
+@charset "UTF-8";
+
+body {
+  color: #000;
+  background-color: #eee;
+}
+
+.header .logo {
+  width: 120px;
+  height: 82px;
+}
+
+.headline .caption {
+  position: relative;
+  width: 350px;
+}
+
+.headline .caption .image img {
+  width: 100%;
+}
+
+.headline .caption .title {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.headline .caption .title h1 {
+  color: #fff;
+  font-size: 1.2em;
+}
+
+.headline .caption .body {
+  font-size: 0.8em;
+}
+
+.posts .post .date {
+  font-size: 0.6em;
+  color: #999999;
+}
+
+.posts .post .title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.posts .post .body {
+  font-size: 0.8em;
+}
+
+.posts .post .image img {
+  width: 250px;
+}
+
 body {
   color: #000;
 }
@@ -50,4 +106,228 @@ body {
 .posts .post .image img {
   width: 250px;
 }
+
+.header-container {
+  width: 960px;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+#login-link {
+  width: 400px;
+  list-style: none;
+}
+
+.nav-link {
+  text-align: right;
+  padding: 8px 150px;
+  color: #111;
+}
+
+#nav-link {
+  float: right;
+  padding: 0;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  float: right;
+}
+
+#navbarDropdown {
+  float: right;
+}
+
+.header-logo img {
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+
+.header-logo a {
+  width: 50px;
+  height: 50px;
+}
+
+.clearflex {
+  width: 389px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.clearflex li {
+  width: 79px;
+  height: 50px;
+  list-style: none;
+  display: inline-block;
+  text-align: center;
+}
+
+/*li:last-child {*/
+
+/*  background-color: #C0C0C0;*/
+
+/*  color: #000;*/
+
+/*}*/
+
+.clearflex a {
+  width: 79px;
+  display: block;
+  margin: 13px 0;
+  border-right: dashed 1px #C0C0C0;
+  font-size: 13px;
+  font-weight: bold;
+  color: #111;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff0000;
+}
+
+.cart-item {
+  width: 50px;
+  height: 40px;
+  display: inline-block;
+  position: absolute;
+  top: 15px;
+  left: 900px;
+}
+
+.cart-item img {
+  width: 40px;
+  height: 40px;
+}
+
+.login {
+  width: 210px;
+  height: 50px;
+  display: inline-block;
+  position: absolute;
+  top: 13px;
+  left: 1100px;
+}
+
+/* ここから goods/show.blade.php のcss */
+
+.body-container {
+  width: 960px;
+  height: 1000px;
+  margin: 0 auto;
+}
+
+.link {
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+.link ul {
+  width: 960px;
+  height: 30px;
+  padding-left: 0;
+}
+
+.link li {
+  list-style: none;
+  float: left;
+  text-align: center;
+}
+
+.link a {
+  color: #333;
+}
+
+.link a:hover {
+  text-decoration: none;
+  color: red;
+}
+
+.details {
+  width: 180px;
+  float: left;
+  padding: 15px 15px 0 15px;
+  background-color: #fff;
+  display: inline-block;
+}
+
+.image {
+  width: 474px;
+  height: 592px;
+  display: inline-block;
+  float: left;
+  margin: 0 63px;
+}
+
+#top h1 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+#top h1:hover {
+  color: #ff0000;
+}
+
+#top p {
+  font-size: 12px;
+}
+
+.select-color h1 {
+  font-size: 20px;
+  padding-bottom: 10px;
+  border-bottom: dotted 1px #333;
+}
+
+.select-size {
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: dotted 1px #333;
+}
+
+.select-size h1 {
+  font-size: 20px;
+  padding-bottom: 10px;
+  border-bottom: dotted 1px #333;
+}
+
+.select-size button {
+  border-color: #c0c0c0;
+  border-radius: 0;
+  width: 46px;
+  height: 25px;
+  line-height: 7px;
+  margin-bottom: 5px;
+}
+
+.add-cart {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#cart {
+  background-color: #333;
+  border-color: #333;
+  border-radius: 10px;
+  width: 150px;
+  height: 30px;
+  color: #fff;
+}
+
+#confirm-stock {
+  background-color: #333;
+  border-color: #333;
+  border-radius: 10px;
+  width: 150px;
+  height: 30px;
+}
+
+#confirm-stock a {
+  color: #fff;
+}
+
+/* ここまで goods/show.blade.php のcss */
 

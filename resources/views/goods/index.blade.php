@@ -36,7 +36,7 @@
             <!--@endforeach-->
             <div clss="goods-category">
                 <h1 style="margin-top: 50px;">商品カテゴリ</h1>
-                <ul class="category">
+                <ul class="category" id="category">
                     <li>
                         <h2><a href="#">WOMAN</a></h2>
                     </li>
