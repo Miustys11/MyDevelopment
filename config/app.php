@@ -229,4 +229,6 @@ return [
 
     ],
 
+    'STRIPE_API_PUBLIC' => env('STRIPE_API_PUBLIC'),
+
 ];

@@ -34,12 +34,15 @@ class GoodsController extends Controller
         
         // Goods Modelからデータを取得する
         $goods = Goods::find($request->id);
+  
+        $like = $goods->likes()->where('user_id', Auth::user()->id)->first();
         
         // goodsを$goodsに置き換える
         // viewのほうでは$（ダラーマーク）がつく
         
-        return view('goods.show', ['goods' => $goods]);
+        return view('goods.show', ['goods' => $goods, 'like' => $like]);
     }
+
     
    
    /**

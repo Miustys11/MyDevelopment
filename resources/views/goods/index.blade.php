@@ -3,9 +3,9 @@
 @section('content')
     <div class="container">
         <div class="goods-container">
-            <div class="slide">
+            <!-- <div class="slide">
                 <img alt="slide show" src="{{ asset('/img/logo/slide.png') }}">
-            </div>
+            </div> -->
             <form action="{{ action('GoodsController@index') }}" method="get">
                     <div class="form-group row">
                         <label class="col-md-2" id="goods-name">アイテム名</label>

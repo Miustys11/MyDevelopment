@@ -3,10 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Auth;
+use App\Like;
 
 class Goods extends Model
 {
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
     protected $guarded = array('id');
+    protected $fillable = ['user_id'];
     
     public static $rules  = array(
         'category_id' => 'required',
@@ -37,5 +43,24 @@ class Goods extends Model
     public function category_type() {
         
         return $this->belongsTo('App\CategoryType');
+    }
+
+    public function orders() {
+        return $this->hasMany('App\Order');
+    }
+
+    public function user()
+    {
+      return $this->belongsTo(User::class);
+    }
+
+    public function likes()
+    {
+      return $this->hasMany('App\Like');
+    }
+
+    public function like_by()
+    {
+      return Like::where('user_id', Auth::user()->id)->first();
     }
 }

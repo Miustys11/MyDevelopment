@@ -66,6 +66,9 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('goods/variation', 'Admin\GoodsVariationController@index')->name('admin.variation');
     Route::get('goods/variation/edit', 'Admin\GoodsVariationController@edit')->name('admin.variation.edit');
     Route::post('goods/variation/edit', 'Admin\GoodsVariationController@update')->name('admin.variation.update');
+
+    // 注文履歴
+    Route::get('orders', 'Admin\GoodsController@orders');
     
     
 });
@@ -83,6 +86,8 @@ Route::post('/mycart/reduce', 'CartController@reduceMyCart');
 Route::get('/mycartlist', 'CartController@myCartList')->name('mycartlist');
 Route::post('/cartdelete','CartController@deleteCart')->name('mycart.delete');
 Route::post('/cartupdate','CartController@updateCart')->name('mycart.update');
+Route::post('cart/complete', 'CartController@complete')->name('cart.complete');
+Route::get('cart/test', 'CartController@test')->name('cart.test');
 
 // サブカテゴリ表示
 Route::get('/sub_category/{sub_category_id}', 'GoodsController@getSubCategory');
@@ -96,5 +101,11 @@ Route::post('/contact/confirm', 'ContactController@confirm')->name('contact.conf
 
 //送信完了ページ
 Route::post('/contact/thanks', 'ContactController@send')->name('contact.send');
+
+// いいね機能
+Route::post('/goods/{goods}/likes', 'LikesController@store');
+Route::post('/goods/{goods}/likes/{like}', 'LikesController@destroy');
+Route::post('/goods/{goods}/likes_store', 'LikesController@store_ajax');
+Route::post('/goods/{goods}/likes_destroy', 'LikesController@destroy_ajax');
 
 Auth::routes();

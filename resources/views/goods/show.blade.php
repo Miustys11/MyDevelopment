@@ -22,6 +22,19 @@
                 </div>
                 <div class="image">
                     <img src="{{ asset('storage/image/'  . $goods->image_path) }}">
+                    @if(Auth::guard('user')->check())
+                        @if ($like)
+                            <button type="submit" class="like_btn like" >
+                                <i class="fas fa-heart"></i>
+                                Like <span class="likes_count">{{ $goods->likes->count() }}</span>
+                            </button>
+                        @else
+                            <button type="submit" class="like_btn unlike">
+                                <i class="far fa-heart"></i>
+                                Like <span class="likes_count">{{ $goods->likes->count() }}</span>
+                            </button>
+                        @endif
+                    @endif
                 </div>
                 <div class="details bottom" id="bottom">
                     <div class="select-color">
@@ -62,3 +75,83 @@
         </div>
     </div>
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(function() {
+
+    // いいねする
+    $(document).on("click", "button.like_btn.unlike", function() {
+        const goods = @json($goods);
+        let url = "/goods/" + goods.id + "/likes_store";
+        console.log('url_unlike', url);
+        $.ajaxSetup({
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
+        });
+        $.ajax({	
+            url: url,
+            type:"post",
+            contentType: "application/json",
+            // サーバから返されるデータの種類
+            // "json"を指定すると、JavaScriptオブジェクトを返す
+            dataType:"json",
+        }).done(function(data,textStatus,jqXHR) {
+            $("#p1").text(jqXHR.status); //例：200
+            console.log("goods", data.goods); //1
+            const goods = data.goods;
+            $("span.likes_count").text(goods.likes_count);
+            const heart = $("button.like_btn .fa-heart");
+
+            heart.removeClass("far");
+            heart.addClass("fas");
+
+            const likeBtn = $("button.like_btn");
+            likeBtn.removeClass('unlike');
+            likeBtn.addClass('like');
+            
+
+        }).fail(function(jqXHR, textStatus, errorThrown){
+            $("#p1").text("err:"+jqXHR.status); //例：404
+            $("#p2").text(textStatus); //例：error
+            $("#p3").text(errorThrown); //例：NOT FOUND
+        }).always(function(){
+        });
+    });
+
+    // いいね解除
+    $(document).on("click", "button.like_btn.like", function() {
+        const goods = @json($goods);
+        let url = "/goods/" + goods.id + "/likes_destroy";
+        console.log('url_like', url);
+
+        $.ajaxSetup({
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
+        });
+        $.ajax({	
+            url: url,
+            type:"post",
+            contentType: "application/json",
+            // サーバから返されるデータの種類
+            // "json"を指定すると、JavaScriptオブジェクトを返す
+            dataType:"json",
+        }).done(function(data,textStatus,jqXHR) {
+            $("#p1").text(jqXHR.status); //例：200
+            console.log("goods", data.goods); //1
+            const goods = data.goods;
+            $("span.likes_count").text(goods.likes_count);
+            const heart = $("button.like_btn .fa-heart");
+            heart.removeClass("fas");
+            heart.addClass("far");
+
+            const likeBtn = $("button.like_btn");
+            likeBtn.removeClass('like');
+            likeBtn.addClass('unlike');
+        
+        }).fail(function(jqXHR, textStatus, errorThrown){
+            $("#p1").text("err:"+jqXHR.status); //例：404
+            $("#p2").text(textStatus); //例：error
+            $("#p3").text(errorThrown); //例：NOT FOUND
+        }).always(function(){
+        });
+    });
+});
+</script>

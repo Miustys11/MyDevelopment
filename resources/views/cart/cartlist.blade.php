@@ -46,14 +46,25 @@
                         個数：個<br>
                         <p style="font-size:1.2em; font-weight:bold; margin-bottom: 10px;">合計金額：円</p>  
                     </form>
-                    
-                    <form style="margin: 0 auto;">
+
+                    <form style="margin: 0 auto;" action="cart/complete" method="post" id="payment-form">
                         @csrf
-                        <button type="submit" class="purchase">購入する</button>
+                        <script
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="{{config('app.STRIPE_API_PUBLIC')}}"
+                        data-name="Miustys.com"
+                        data-label="Buy 100$"
+                        data-description="clothes"
+                        data-amount="100"
+                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                        data-locale="auto"
+                        data-currency="JPY">
+                        </script>
                     </form>
+
                 </div>
             </div>
-            <div style="width: 75px; margin: 0 auto;">
+                <div style="width: 75px; margin: 0 auto;">
                 <a href="/">商品一覧へ</a>
             </div>
         </div>

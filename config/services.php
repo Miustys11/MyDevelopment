@@ -34,4 +34,9 @@ return [
         'secret' => env('SPARKPOST_SECRET'),
     ],
 
+    'stripe' => [
+        'model'  => 'User',
+        'secret' => env('STRIPE_API_SECRET'),
+    ],
+
 ];

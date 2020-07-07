@@ -15,7 +15,7 @@ class CartController extends Controller
         // Cart Modelからデータを取得する
         $my_carts = Cart::where('user_id',$user_id)->get();
         
-        return view('goods.cart', ['my_carts' => $my_carts]);
+        return view('cart.cart', ['my_carts' => $my_carts]);
     }
     
     public function addMycart(Request $request) {
@@ -76,7 +76,7 @@ class CartController extends Controller
         $datas = ['0','1','2','3','4','5','6','7','8','9','10'];
 
         
-        return view('goods.cartlist', ['carts' => $carts, 'datas' => $datas]);
+        return view('cart.cartlist', ['carts' => $carts, 'datas' => $datas]);
     }
     
     
@@ -115,4 +115,11 @@ class CartController extends Controller
     }
 
 
+    public function complete(Request $request) {
+        return view('checkout.thankyou');
+    }
+
+    public function test(Request $request) {
+        return view('cart.test');
+    }
 }

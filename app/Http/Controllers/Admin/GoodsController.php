@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Order;
 
 use App\Goods;
 use App\GoodsHistory;
@@ -195,5 +196,10 @@ class GoodsController extends Controller
         return view('admin.goods.category.subcategory',['sub_categories' => $sub_categories]);
         
     } 
+
+    public function orders() {
+        $orders = Order::all();
+        return view('admin/goods/orders',compact('orders'));
+    }
 
 }
