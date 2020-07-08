@@ -292,27 +292,56 @@ a:hover {
   border-bottom: dotted 1px #333;
 }
 
-.select-size button {
-  border-color: #c0c0c0;
-  border-radius: 0;
+// .select-size button {
+//   border-color: #c0c0c0;
+//   border-radius: 0;
+//   width: 46px;
+//   height: 25px;
+//   line-height: 7px;
+//   margin-bottom: 5px;
+// }
+
+.btn {
+  display: inline-block;
+	position: relative;
   width: 46px;
   height: 25px;
-  line-height: 7px;
-  margin-bottom: 5px;
+	padding: 0.8em;
+	text-align: center;
+	text-decoration: none;
+	color: #1B1B1B;
+	background: #fff;
+  border:1px solid #fff;
+  line-height: 15px;
+}
+
+.btn:hover {
+	 background: #F2F2F2;
+	 cursor: pointer;
+	 text-decoration: none;
 }
 
 .add-cart {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  width: 150px;
+  margin: 10px 0;
 }
 
-#cart {
-  background-color: #333;
-  border-color: #333;
-  border-radius: 10px;
-  width: 150px;
-  height: 30px;
-  color: #fff;
+.button {
+	display: block;
+	position: relative;
+	width: 150px;
+	padding: 0.8em;
+	text-align: center;
+	text-decoration: none;
+	color: #1B1B1B;
+	background: #fff;
+	border:1px solid #1B1B1B;
+}
+.button:hover {
+	 background: #1B1B1B;
+         color: #fff;
+	 cursor: pointer;
+	 text-decoration: none;
 }
 
 #confirm-stock {
@@ -327,5 +356,23 @@ a:hover {
   color: #fff;
 }
 
+.link-more {
+  padding-left: 0;
+}
+
+.link-more li {
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+.link-more li:first-child {
+  margin-top: 10px;
+}
+
+.link-more a {
+  color: #333;
+  font-size: 13px;
+  white-space: nowrap;
+}
 /* ここまで goods/show.blade.php のcss */
 

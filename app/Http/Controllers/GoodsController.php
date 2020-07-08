@@ -14,19 +14,7 @@ class GoodsController extends Controller
         
         $sub_categories = SubCategory::all();
         
-        // すべてのアイテムを取得
-        // $posts = Goods::all();
-        
-        $cond_title = $request->cond_title;
-        if ($cond_title != '') {
-            // 検索されたら検索結果を取得する
-            $posts = Goods::where('name', $cond_title)->get();
-        } else {
-            // それ以外はすべてのニュースを取得する
-            $posts = Goods::all();
-        }
-        
-        return view('goods.index', ['posts' => $posts, 'cond_title' => $cond_title, 'sub_categories' => $sub_categories]);
+        return view('goods.index', ['sub_categories' => $sub_categories]);
     }
     
     
@@ -53,9 +41,19 @@ class GoodsController extends Controller
    
    public function getSubCategory(Request $request) {
        
-      $goods = Goods::where('sub_category_id', $request->sub_category_id)->get();
+
+      $cond_title = $request->cond_title;
+        if ($cond_title != '') {
+            // 検索されたら検索結果を取得する
+            $goods = Goods::where('sub_category_id', $request->sub_category_id)->where('name', "like", "%" . $cond_title . "%")->get();
+        } else {
+            // sub_category_idを取得
+            $goods = Goods::where('sub_category_id', $request->sub_category_id)->get();
+        }
+      
     
-      return view('goods.category', ['goods' => $goods]);
+      return view('goods.category', ['goods' => $goods,'cond_title' => $cond_title]);
+
    }
     
 }

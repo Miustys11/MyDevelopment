@@ -60,9 +60,9 @@
                     <form action="/mycart" method="post" class="add-cart">
                         @csrf
                         <input type="hidden" name="goods_id" value="{{ $goods->id }}">
-                        <input type="submit" value="カートに入れる" id="cart">
+                        <input type="submit" value="カートに入れる" class="button">
                     </form>
-                    <button id="confirm-stock"><a href="#">店舗の在庫を確認する</a></button>
+                    <input type="submit" value="在庫を確認する" class="button"></input>
                     <ul class="link-more">
                         <li><a href="#">はじめてのお客様へ</a></li>
                         <li><a href="#">在庫について</a></li>
