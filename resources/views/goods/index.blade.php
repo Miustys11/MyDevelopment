@@ -4,7 +4,7 @@
     <div class="container">
         <div class="goods-container">
             <div class="slide">
-                <img alt="slide show" src="{{ asset('/img/logo/slide.png') }}">
+                <img alt="slide show" src="{{ asset('/img/logo/slide2.png') }}">
             </div>
             <div clss="goods-category">
                 <h1 style="margin-top: 50px;">商品カテゴリ</h1>

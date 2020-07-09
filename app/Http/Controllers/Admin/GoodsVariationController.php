@@ -6,56 +6,34 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\GoodsVariation;
+use App\Goods;
 
 class GoodsVariationController extends Controller
 {
     
-    public function add() {
-        
-        return view('admin.goods.variation.create');
-    }
-    
-    public function create(Request $request) {
-        
-        // Varidationを行う
-        $this->validate($request, GoodsVariation::$rules);
-        
-        $variations = new GoodsVariation;
-        $form = $request->all();
-
-        $variations->goods_id = $form['goods_id'];
-        $variations->size = $form['size'];
-        $variations->color = $form['color'];
-        $variations->price = $form['price'];
-        $variations->stock = $form['stock'];
-        
-      
-        // データベースに保存する
-        $variations->fill($form);
-        $variations->save();
-      
-      
-        return redirect('admin/goods/variation/create');
-    }
-    
+    // GoodsVariationの一覧
     public function index(Request $request) {
         
         $variations = GoodsVariation::all();
         
-        return view('admin.goods.variation.index');
+        return view('admin.goods.variation.index',['variations' => $variations]);
         
     }
     
+    // GoodsVariationの編集画面
     public function edit(Request $request) {
         
-        // GoodsVariation Model からデータを取得
+        // GoodsVariation Model から id を取得
         $variations = GoodsVariation::find($request->id);
-        
-        if (empty($goodsVariations)) {
+
+        $form = $request->all();
+
+        // もし $variations が空だったら 404のページを表示
+        if (empty($variations)) {
             abort(404);
         }
         
-        return view('admin.goods.variation.edit');
+        return view('admin.goods.variation.edit',['variations' => $variations, 'form' => $form]);
         
     }
     
@@ -70,6 +48,7 @@ class GoodsVariationController extends Controller
         // 送信されてきたフォームデータを格納する
         $form = $request->all();
         
+        // 以下を $form に格納
         $variations->goods_id = $form['goods_id'];
         $variations->size = $form['size'];
         $variations->color = $form['color'];

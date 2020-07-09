@@ -63,4 +63,9 @@ class Goods extends Model
     {
       return Like::where('user_id', Auth::user()->id)->first();
     }
+
+    public function goods_variations() {
+        return $this->hasMany('App\GoodsVariation');
+    }
+    
 }

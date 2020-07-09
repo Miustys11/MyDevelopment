@@ -16,7 +16,7 @@
         </form>
         <ul class="target-area search-now position-absolute bg-white card p-4 d-none">
             @foreach ($goods as $item)
-                <li style="list-style: none;">{{ $item->name }}</li>
+                <li class="serch" style="list-style: none;">{{ $item->name }}</li>
             @endforeach
         </ul>
         <div class="category">
@@ -34,5 +34,4 @@
             @endforeach
         </div>
     </div>
-    <style>
 @endsection

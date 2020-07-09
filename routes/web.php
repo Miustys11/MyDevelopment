@@ -59,13 +59,10 @@ Route::group(['prefix' => 'admin'], function() {
     
     
     // goodsvariation
-    Route::post('goods/variation/create', 'Admin\GoodsVariationController@create')->name('admin.variation.create');
-
-    Route::get('goods/variation/create', 'Admin\GoodsVariationController@add')->name('admin.variation.add');
-
     Route::get('goods/variation', 'Admin\GoodsVariationController@index')->name('admin.variation');
     Route::get('goods/variation/edit', 'Admin\GoodsVariationController@edit')->name('admin.variation.edit');
     Route::post('goods/variation/edit', 'Admin\GoodsVariationController@update')->name('admin.variation.update');
+    Route::get('goods/variation/delete', 'Admin\GoodsVariationController@delete')->name('admin.variation.delete');
 
     // 注文履歴
     Route::get('orders', 'Admin\GoodsController@orders');

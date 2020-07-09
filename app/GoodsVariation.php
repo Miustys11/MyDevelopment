@@ -16,4 +16,7 @@ class GoodsVariation extends Model
         'stock' => 'required',
     );
     
+    public function goods_variation() {
+        return $this->belongsTo('App\Goods');
+    }
 }

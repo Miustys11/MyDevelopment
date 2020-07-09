@@ -1,11 +1,11 @@
 @extends('layouts.admin')
-@section('title', 'アイテムバリエーションの編集')
+@section('title', 'アイテム詳細の編集')
 
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>アイテムバリエーションの編集</h2>
+                <h2>アイテム詳細の編集</h2>
                 <form action="{{ action('Admin\GoodsVariationController@update') }}" method="post" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                         <ul>
@@ -15,33 +15,36 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <label class="col-md-2" for="name">アイテムID</label>
+                        <label class="col-md-2" for="name">商品ID</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="name" value="{{ $form->name }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="name">サイズ</label>
                         <div class="col-md-10">
-                            <select name="category_type_id">
-                                @foreach(Constant::CONST["SIZE_LIST"] as $type)
-                                    <option value="{{ $type->id }}" {{ $goods_form->category_type_id === $type->id ? "selected" : "" }}>
-                                        {{ $type->name}}
-                                    </option>
-                                @endforeach
-                            </select>
+                            <input type="checkbox" name="size" value="XS" class="size">XS
+                            <input type="checkbox" name="size" value="S" class="size">S
+                            <input type="checkbox" name="size" value="M" class="size">M
+                            <input type="checkbox" name="size" value="L" class="size">L
+                            <input type="checkbox" name="size" value="XL" class="size">XL
+                            <input type="checkbox" name="size" value="2XL" class="size">2XL
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="name">カラー</label>
                         <div class="col-md-10">
-                            <select name="category_type_id">
-                                @foreach($types as $type)
-                                    <option value="{{ $type->id }}" {{ $goods_form->category_type_id === $type->id ? "selected" : "" }}>
-                                        {{ $type->name}}
-                                    </option>
-                                @endforeach
-                            </select>
+                        <input type="checkbox" name="color" value="{{ old('color') }}">ホワイト<br>
+                            <input type="checkbox" name="color" value="{{ old('color') }}">ライトグレー<br>
+                            <input type="checkbox" name="color" value="{{ old('color') }}">ダークグレー<br>
+                            <input type="checkbox" name="color" value="{{ old('color') }}">ブラック<br>
+                            <input type="checkbox" name="color" value="{{ old('color') }}">ピンク<br>
+                            <input type="checkbox" name="color" value="{{ old('color') }}">オレンジ<br>
+                            <input type="checkbox" name="color" value="{{ old('color') }}">ベージュ<br>
+                            <input type="checkbox" name="color" value="{{ old('color') }}">クリーム<br>
+                            <input type="checkbox" name="color" value="{{ old('color') }}">イエロー<br>
+                            <input type="checkbox" name="color" value="{{ old('color') }}">ライトグリーン<br>
+                            <input type="checkbox" name="color" value="{{ old('color') }}">オリーブ<br>
+                            <input type="checkbox" name="color" value="{{ old('color') }}">ブルー<br>
                         </div>
                     </div>
                     <div class="form-group row">

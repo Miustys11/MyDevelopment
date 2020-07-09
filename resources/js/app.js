@@ -47,10 +47,14 @@ $(function () {
     $('#search-text').on('input', searchWord);
     $('#search-text').focus(function() {
         $(".search-now").removeClass("d-none");
-      }).blur(function() {
-        $(".search-now").addClass("d-none");
       });
   });
+
+    $(".target-area li").on("click", function(){
+        $("#search-text").val($(this).text());
+        $(".search-now").addClass("d-none");
+    });
+    
 const app = new Vue({
     el: '#app',
 });
