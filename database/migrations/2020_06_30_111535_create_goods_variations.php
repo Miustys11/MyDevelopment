@@ -18,8 +18,6 @@ class CreateGoodsVariations extends Migration
             $table->integer('goods_id');
             $table->string('size'); // サイズ
             $table->string('color'); //カラー
-            $table->integer('price'); //値段
-            $table->integer('stock'); //在庫数
             $table->timestamps();
         });
     }

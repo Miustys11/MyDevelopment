@@ -114,12 +114,9 @@ class CartController extends Controller
         }
     }
 
-
+    // Order Complite
     public function complete(Request $request) {
         return view('checkout.thankyou');
     }
 
-    public function test(Request $request) {
-        return view('cart.test');
-    }
 }

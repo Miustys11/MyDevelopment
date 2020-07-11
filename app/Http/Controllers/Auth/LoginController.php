@@ -46,6 +46,7 @@ class LoginController extends Controller
         $this->middleware('guest:user')->except('logout');
     }
     
+    
     /** 以下追記 **/
     // public function showLoginForm()
     // {

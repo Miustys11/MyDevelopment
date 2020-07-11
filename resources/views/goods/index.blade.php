@@ -24,9 +24,9 @@
                 </ul>
                 <div class="sub-category">
                     @foreach($sub_categories as $sub_category)
-                        @if($sub_category->category->type_id === 1)
+                        @if($sub_category->category->category_type_id === 1)
                             @php
-                                $image = '/img/sub_category/' . $sub_category->category->type_id . '_' . $sub_category->name . '.jpg'
+                                $image = '/img/sub_category/' . $sub_category->category->category_type_id . '_' . $sub_category->name . '.jpg'
                             @endphp
                             <div class="sub">
                                 <a href="/sub_category/{{ $sub_category->id }}" >

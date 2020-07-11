@@ -28,8 +28,8 @@
                                     <th>{{ $variation->goods_id }}</th>
                                     <th>{{ $variation->size }}</th>
                                     <th>{{ $variation->color }}</th>
-                                    <th>{{ $variation->price }}</th>
-                                    <th>{{ $variation->stock }}</th>
+                                    <th>{{ $variation->goods_variations_details->price }}</th>
+                                    <th>{{ $variation->goods_variations_details->stock }}</th>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\GoodsVariationController@edit', ['id' => $variation->id]) }}">編集</a>

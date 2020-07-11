@@ -19,4 +19,7 @@ class GoodsVariation extends Model
     public function goods_variation() {
         return $this->belongsTo('App\Goods');
     }
+    public function goods_variations_details() {
+        return $this->hasMany('App\GoodsVariation');
+    }
 }

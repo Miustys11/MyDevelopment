@@ -282,12 +282,27 @@ a:hover {
 /* ここから contact/index.blade.php のcss */
 
 .contact-container {
-  width: 960px;
+  width: 500px;
   height: 700px;
   margin: 0 auto;
 }
+
+.contact-container h1 {
+  width: 500px;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 40px;
+}
+
+.border {
+  width: 200px;
+  height: 1px;
+  border: #333;
+  margin: 30px 150px 50px 150px;
+}
+
 .contact-box {
-  width: 600px;
+  width: 400px;
   height: 70px;
   margin: 0 auto;
 }
@@ -299,17 +314,96 @@ a:hover {
 
 .contact-box input {
   width: 400px;
+  height: 40px;
+  color: #f9f9f9;
+  border-radius: 5px;
+  border: solid 1px #f9f9f9;
+  background: #f9f9f9;
+  padding-left: 15px;
+  outline: none;
+  caret-color: #333;
 }
 
-#title-labal {
-  margin-right: 70px;
+
+#content {
+  width: 400px;
+  height: 200px;
+  margin: 0 auto;
 }
 
 #cantact-body {
   width: 400px;
   height: 200px;
   vertical-align:top;
+  border-radius: 5px;
+  border: solid 1px #f9f9f9;
+  background: #f9f9f9;
+  padding-left: 15px;
+  outline: none;
 }
+
+.error-message {
+  color: #f00;
+}
+
+#confirm-content {
+  width: 210px;
+  margin: 50px 145px;
+}
+
+.btn-square-slant {
+  width: 200px;
+  display: inline-block;
+  position: relative;
+  padding: 0.5em 1.4em;
+  text-decoration: none;
+  background: #333;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 5px #555;/*ボタン色より暗めに*/
+  border-right: solid 5px #555;/*ボタン色より暗めに*/
+  border-left: none;
+  border-top: none;
+}
+
+.btn-square-slant:before {  
+  content: " ";
+  position: absolute;
+  bottom: -5px;
+  left: -1px;
+  width: 0;
+  height: 0;
+  border-width: 0 6px 6px 0px;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: #FFF;
+}
+
+.btn-square-slant:after {  
+  content: " ";
+  position: absolute;
+  top: -1px;
+  right: -5px;
+  width: 0;
+  height: 0;
+  border-width: 0px 6px 6px 0px;
+  border-style: solid;
+  border-color: #FFF;
+  border-bottom-color: transparent;
+}
+
+.btn-square-slant:active {
+  /*ボタンを押したとき*/
+  border:none;
+  -webkit-transform: translate(6px,6px);
+  transform: translate(6px,6px);
+}
+
+.btn-square-slant:active:after, .btn-square-slant:active:before {
+  content: none;/*ボタンを押すと線が消える*/
+}
+
+
+
 /* ここまで contact/index.blade.php のcss */
 
 /* ここから contact/confirm.blade.php のcss */
@@ -320,7 +414,7 @@ a:hover {
   margin: 0 auto;
 }
 
-/* ここまで contact/index.blade.php のcss */
+/* ここまで contact/confirm.blade.php のcss */
 
 /* ここから goods/categoryblade.php のcss */
 

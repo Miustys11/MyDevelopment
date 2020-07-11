@@ -24,10 +24,28 @@ class GoodsController extends Controller
         $goods = Goods::find($request->id);
   
         $like = $goods->likes()->where('user_id', Auth::user()->id)->first();
+
+        // -- ランキング機能 --
+        // 商品詳細を閲覧したと同時にレコードが作られる
+        // 商品詳細を閲覧したときに goods_id に1ずつカウントされていく
+
+        $goods_count = 0;
+
+        // レコードが作られる
+        GoodsView::firstOrCreate(
+            [
+              'user_id' => Auth::user()->id,
+              'goods_id' => $goodsId
+            ]
+          );
+
+        
+
+        
         
         // goodsを$goodsに置き換える
         // viewのほうでは$（ダラーマーク）がつく
-        
+
         return view('goods.show', ['goods' => $goods, 'like' => $like]);
     }
 

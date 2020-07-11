@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddDeletedAtColumnToGoodsTable extends Migration
+class CreateGoodsViewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class AddDeletedAtColumnToGoodsTable extends Migration
      */
     public function up()
     {
-        Schema::table('goods', function (Blueprint $table) {
-            $table->softDeletes();
+        Schema::create('goods_views', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->integer('user_id');
+            $table->integer('goods_id');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +28,6 @@ class AddDeletedAtColumnToGoodsTable extends Migration
      */
     public function down()
     {
-        Schema::table('goods', function (Blueprint $table) {
-            $table->dropSoftDeletes();
-        });
+        Schema::dropIfExists('goods_views');
     }
 }

@@ -17,7 +17,7 @@ class Category extends Model
     
     public function category_type() {
         
-        return $this->belongsTo('App\CategoryType', 'type_id');
+        return $this->belongsTo('App\CategoryType');
     }
     
     public function sub_categories() {
