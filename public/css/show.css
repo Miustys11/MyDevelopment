@@ -220,6 +220,10 @@ a:hover {
   margin: 0 auto;
 }
 
+.goods-details {
+  height: 700px;
+}
+
 .link {
   height: 30px;
   margin-bottom: 20px;
@@ -260,6 +264,16 @@ a:hover {
   display: inline-block;
   float: left;
   margin: 0 63px;
+  position: relative;
+}
+
+.like-btn {
+  width: 80px;
+  height: 29px;
+  display: inline-block;
+  position: absolute;
+  top: 550px;
+  left: 10px;
 }
 
 #top h1 {
@@ -369,5 +383,87 @@ a:hover {
   white-space: nowrap;
 }
 
+.recommends {
+  width: 132px;
+  height: 243px;
+  display: inline-block;
+  float: left;
+  margin-left: 50px;
+}
+
+.recommends img {
+  width: 132px;
+  height: 178px;
+}
+
+.recommends h1 {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.recommends p {
+  font-weight: bold;
+}
+
+.recommend-goods {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: solid 1px #A2A2A2;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
 /* ここまで goods/show.blade.php のcss */
+
+/* ここから cart/cart.blade.php のcss */
+
+.mx-auto {
+  max-width: 1200px;
+}
+
+.text-center {
+  color: #555555;
+  font-size: 1.2em;
+  padding: 24px 0px;
+}
+
+.cart {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.mycart_box {
+  width: 960px;
+  background: #fff;
+  margin-bottom: 15px;
+  padding: 20px;
+}
+
+.mycart_box p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.back {
+  width: 130px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.back a {
+  color: #333;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.back a:hover {
+  color: #ff0000;
+}
+
+.goods-list {
+  margin: 0 29px;
+}
+
+/* ここまで cart/cart.blade.php のcss */
 

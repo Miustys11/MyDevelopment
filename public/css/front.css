@@ -19,8 +19,10 @@ a:hover {
 
 .header-container {
   width: 960px;
+  height: 65px;
   margin: 0 auto;
   padding-top: 15px;
+  position: relative;
 }
 
 #login-link {
@@ -48,10 +50,17 @@ a:hover {
   float: right;
 }
 
+.header-logo {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+}
+
 .header-logo img {
   width: 50px;
   height: 50px;
-  float: left;
 }
 
 .header-logo a {
@@ -60,19 +69,19 @@ a:hover {
 }
 
 .clearflex {
-  width: 389px;
+  width: 400px;
   height: 50px;
-  display: flex;
+  display: inline-block;
   align-items: center;
   margin-bottom: 0;
-  position: relative;
+  padding: 0;
 }
 
 .clearflex li {
   width: 79px;
   height: 50px;
   list-style: none;
-  display: inline-block;
+  float: left;
   text-align: center;
 }
 
@@ -100,12 +109,10 @@ a:hover {
 }
 
 .cart-item {
-  width: 50px;
+  width: 40px;
   height: 40px;
   display: inline-block;
-  position: absolute;
-  top: 15px;
-  left: 900px;
+  float: right;
 }
 
 .cart-item img {
@@ -114,12 +121,25 @@ a:hover {
 }
 
 .login {
-  width: 210px;
+  width: 100px;
   height: 50px;
   display: inline-block;
-  position: absolute;
-  top: 13px;
-  left: 1100px;
+  margin-left: 350px;
+}
+
+#login-link {
+  width: 100px;
+  text-align: right;
+  float: right;
+}
+
+#login-link a {
+  width: 100px;
+  height: 50px;
+  padding: 0;
+  margin-right: 0;
+  text-align: center;
+  line-height: 50px;
 }
 
 /* ここまでheaderのcss */
@@ -164,54 +184,12 @@ a:hover {
   height: 500px;
 }
 
-#popular-goods {
-  font-size: 30px;
-  margin: 40px 0 20px 0;
-  color: #333;
+.goods-category {
+  height: 2000px;
 }
 
-#goods-name {
-  width: 130px;
-  display: inline-block;
-  padding: 0;
-  text-align: center;
-  line-height: 35px;
-}
-
-#cond_title {
-  padding-left: 20px;
-}
-
-.goods-box {
-  width: 310px;
-  height: 450px;
-  margin: 50px 10px 0 0;
-  display: inline-block;
-  float: left;
-}
-
-.image {
-  width: 300px;
-  margin: 0 auto;
-}
-
-.image img {
-  width: 300px;
-  height: 358px;
-}
-
-.goods-name {
-  width: 316px;
-  margin: 10px 37px 0 5px;
-}
-
-.goods-name h1 {
-  font-size: 20px;
-}
-
-.amount {
-  width: 316px;
-  margin: 10px 37px 0 5px;
+.category-title {
+  margin-top: 50px;
 }
 
 #category {
@@ -239,6 +217,7 @@ a:hover {
 }
 
 .sub-category {
+  height: 1500px;
   margin-top: 40px;
 }
 
@@ -281,7 +260,205 @@ a:hover {
   font-weight: bold;
 }
 
+.recommendation {
+  height: 550px;
+}
+
+.recommendation h1 {
+  margin: 30px 0 20px 0;
+}
+
+.recommend-image {
+  width: 800px;
+  height: 500px;
+  display: inline-block;
+  float: left;
+}
+
+.recommendation img {
+  width: 800px;
+  height: 500px;
+}
+
+.recommend-details {
+  width: 160px;
+  height: 500px;
+  margin: 0;
+  float: left;
+}
+
+.main-detail {
+  width: 145px;
+  margin-left: 15px;
+}
+
+.main-detail h2 {
+  width: 80px;
+  color: #FF3333;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px 0;
+  margin-bottom: 20px;
+  font-size: 13px;
+  border: solid 2px #ff0000;
+}
+
+.main-detail h1 {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.main-detail p {
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.sub-detail {
+  width: 145px;
+  margin-left: 15px;
+}
+
+.sub-detail h1 {
+  width: 80px;
+  font-size: 14px;
+  text-align: center;
+  padding: 5px 0;
+  margin-top: 100px;
+  border: solid 1px #333;
+}
+
+.sub-detail h2 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.ranking {
+  height: 1800px;
+  margin-top: 40px;
+}
+
+.ranking-list {
+  width: 240px;
+  height: 360px;
+  display: inline-block;
+  float: left;
+  margin-top: 20px;
+}
+
+.rank-order {
+  padding-left: 10px;
+  border-left: solid 5px #808080;
+  margin-bottom: 20px;
+}
+
+.ranking img {
+  width: 230px;
+  height: 288px;
+  margin: 0 10px;
+}
+
+.ranking-name h1 {
+  width: 230px;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+.price p {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
 /* ここまで goods/index.blade.php のcss */
+
+/* ここから goods/cartlist.blade.php のcss */
+
+.text-center {
+  color: #555555;
+  font-size: 1.2em;
+  padding: 24px 0px;
+}
+
+.cart-ocontents {
+  width: 1400px;
+}
+
+.d-flex {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.mycart-box {
+  width: 960px;
+  height: 210px;
+  background: #f9f9f9;
+  margin-bottom: 15px;
+}
+
+.mycart-box p {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.qty-table {
+  margin: 0 auto;
+}
+
+.qty-table {
+  margin: 0 auto;
+}
+
+.qty-change {
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.cart-delete {
+  width: 170px;
+  margin: 0 auto;
+}
+
+.text-center {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.total {
+  width: 960px;
+}
+
+.tatal-price {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.payment {
+  margin: 0 auto;
+}
+
+.goods-list {
+  width: 110px;
+  margin: 30px 650px 0 650px;
+}
+
+.goods-list a {
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.goods-list a:hover {
+  color: #ff0000;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* ここまで goods/cartlist.blade.php のcss */
 
 /* ここから contact/index.blade.php のcss */
 
@@ -413,10 +590,78 @@ a:hover {
 
 /* ここから contact/confirm.blade.php のcss */
 
+.confirm-container {
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
+  background: #eee;
+  padding-top: 25px;
+}
+
+.confirm {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0 30px 0;
+}
+
 .confirm-box {
   width: 280px;
   height: 70px;
   margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.confirm-box label {
+  font-weight: bold;
+}
+
+.input-label {
+  margin-top: 30px;
+}
+
+#confirm-box1 {
+  width: 200px;
+  height: 40px;
+  margin: 40px 50px 0 50px;
+}
+
+#confirm-box1 button {
+  width: 200px;
+  height: 40px;
+  border: solid 1px #ff0000;
+  border-radius: 20px;
+  background: #ff0000;
+  color: #fff;
+  outline: none;
+}
+
+#confirm-box2 {
+  width: 200px;
+  height: 40px;
+  margin: 20px 50px 0 50px;
+}
+
+#confirm-box2 button {
+  width: 200px;
+  height: 40px;
+  border: solid 1px #ff0000;
+  border-radius: 20px;
+  background: #ff0000;
+  color: #fff;
+  outline: none;
+}
+
+.confirm-box label {
+  width: 280px;
+  text-align: center;
+  margin: 0;
+}
+
+.input-box {
+  width: 280px;
+  text-align: center;
 }
 
 /* ここまで contact/confirm.blade.php のcss */
@@ -454,8 +699,14 @@ a:hover {
 
 .goodsName h1 {
   width: 316px;
-  font-size: 20px;
-  margin: 0;
+  font-size: 17px;
+  margin-left: 5px;
+}
+
+.goodsPrice h1 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 5px;
 }
 
 .serch:hover {

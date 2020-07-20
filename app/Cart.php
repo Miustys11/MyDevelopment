@@ -10,5 +10,11 @@ class Cart extends Model
     protected $fillable = [
        'goods_id', 'user_id', 'qty',
    ];
+
+   public function carts() {
+        
+    return $this->hasMany('App\Goods');
+    
+    }
    
 }

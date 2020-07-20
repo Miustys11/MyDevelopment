@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Goods;
 use App\SubCategory;
+use App\GoodsView;
 
 class GoodsController extends Controller
 {
@@ -13,8 +14,13 @@ class GoodsController extends Controller
     public function index(Request $request) {
         
         $sub_categories = SubCategory::all();
-        
-        return view('goods.index', ['sub_categories' => $sub_categories]);
+
+        // goodsViewを降順に並べる
+        $goods_ranking = Goods::withCount('goods_views')->orderBy('goods_views_count', 'DESC')->limit(8)->get();
+
+
+
+        return view('goods.index', ['sub_categories' => $sub_categories, 'goods_ranking' => $goods_ranking]);
     }
     
     
@@ -22,31 +28,37 @@ class GoodsController extends Controller
         
         // Goods Modelからデータを取得する
         $goods = Goods::find($request->id);
+
+        // 現在認証されているユーザーのIDを取得
+        $user_id = Auth::guard('user')->id();
   
-        $like = $goods->likes()->where('user_id', Auth::user()->id)->first();
+        //ログインしているアカウントでいいね済みかどうかの判定用
+        // $like = $goods->likes()->where('user_id', Auth::user()->id)->first();
+        $like = $goods->likes()->where('user_id', $user_id)->first();
 
         // -- ランキング機能 --
         // 商品詳細を閲覧したと同時にレコードが作られる
-        // 商品詳細を閲覧したときに goods_id に1ずつカウントされていく
 
-        $goods_count = 0;
-
+        if (Auth::guard('user')->check()) {
         // レコードが作られる
-        GoodsView::firstOrCreate(
-            [
-              'user_id' => Auth::user()->id,
-              'goods_id' => $goodsId
-            ]
+          GoodsView::firstOrCreate(
+              [
+                'user_id' => $user_id,
+                'goods_id' => $goods->id
+              ]
           );
+        }
 
-        
+        // Goods の sub_category_id を取得
+        $goods_recommends = Goods::where([
+          ['sub_category_id', $goods->sub_category_id],
+          ['id', '<>', $goods->id]
+        ])->limit(5)->get();
 
-        
-        
         // goodsを$goodsに置き換える
         // viewのほうでは$（ダラーマーク）がつく
 
-        return view('goods.show', ['goods' => $goods, 'like' => $like]);
+        return view('goods.show', ['goods' => $goods, 'like' => $like, 'goods_recommends' => $goods_recommends]);
     }
 
     

@@ -6,19 +6,19 @@
         <p style="text-align: center;">{{ session('status') }}</p>
     @endif
    <div class="">
-        <div class="mx-auto" style="max-width:1200px">
-            <h1 class="text-center font-weight-bold" style="color:#555555;  font-size:1.2em; padding:24px 0px;">
+        <div class="mx-auto">
+            <h1 class="text-center font-weight-bold">
             {{ Auth::guard("user")->user()->name }}さんのカートの中身一覧</h1>
-            <div class="">
+            <div class="cart-ocontents">
                 <div class="d-flex flex-row flex-wrap">
 
                     @foreach($carts as $cart)
-                        <div class="mycart_box">
+                        <div class="mycart-box">
                             <p>ユーザーID：{{$cart->user_id}}</p>
-                            <p>アイテムID：{{$cart->goods_id}}</p>
+                            <p>商品番号：{{$cart->goods_id}}</p>
                             <!--数量変更-->
                             <form action="{{ action('CartController@updateCart') }}" method="post">
-                                <table border="0" cellspacing="4" cellpadding="0">
+                                <table border="0" cellspacing="4" cellpadding="0" class="qty-table">
                                 <tr>
                                 <td>数量
                                     <select name="qty">
@@ -29,33 +29,32 @@
                                 </td>
                                 </tr>
                                 </table>
-                                <input type="submit" value="変更">
+                                <div class="qty-change"><input type="submit" value="変更"></div>
                                 {{ csrf_field() }}
                                 {{Form::hidden('goods_id', $cart->goods_id )}}
                             </form>
                             <!--数量変更-->
-                            <form style="width: 170px; margin: 0 auto;" action="{{ action('CartController@deleteCart') }}" method="post">
+                            <form action="{{ action('CartController@deleteCart') }}" method="post" class="cart-delete">
                                 @csrf
                                 {{Form::hidden('goods_id', $cart->goods_id )}}
-                                <input type="submit" value="カートの商品を削除する" style="margin-top: 10px;">
+                                <input type="submit" value="カートの商品を削除する">
                             </form>
                         </div>
                     @endforeach
                     
-                    <form class="text-center p-2" style="margin: 0 530px;">
-                        個数：個<br>
-                        <p style="font-size:1.2em; font-weight:bold; margin-bottom: 10px;">合計金額：円</p>  
+                    <form class="total">
+                        <p class="tatal-price">合計金額：1500円</p>  
                     </form>
 
-                    <form style="margin: 0 auto;" action="cart/complete" method="post" id="payment-form">
+                    <form class="payment" action="cart/complete" method="post">
                         @csrf
                         <script
                         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                         data-key="{{config('app.STRIPE_API_PUBLIC')}}"
                         data-name="Miustys.com"
-                        data-label="Buy 100$"
+                        data-label="Buy ¥1500"
                         data-description="clothes"
-                        data-amount="100"
+                        data-amount="1500"
                         data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                         data-locale="auto"
                         data-currency="JPY">
@@ -64,7 +63,7 @@
 
                 </div>
             </div>
-                <div style="width: 75px; margin: 0 auto;">
+            <div class="goods-list">
                 <a href="/">商品一覧へ</a>
             </div>
         </div>

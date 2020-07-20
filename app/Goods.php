@@ -12,7 +12,7 @@ class Goods extends Model
     use SoftDeletes;
     protected $dates = ['deleted_at'];
     protected $guarded = array('id');
-    protected $fillable = ['user_id'];
+    protected $fillable = ['user_id', 'name', 'description', 'category_id', 'category_type_id', 'sub_category_id'];
     
     public static $rules  = array(
         'category_id' => 'required',
@@ -33,6 +33,11 @@ class Goods extends Model
     public function category() {
         
         return $this->belongsTo('App\Category');
+    }
+
+    public function cart() {
+        
+        return $this->belongsTo('App\Cart');
     }
     
     public function sub_category() {
@@ -68,4 +73,8 @@ class Goods extends Model
         return $this->hasMany('App\GoodsVariation');
     }
     
+    public function goods_views()
+    {
+        return $this->hasMany('App\GoodsView');
+    }
 }

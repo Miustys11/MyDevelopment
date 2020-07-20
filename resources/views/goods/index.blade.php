@@ -4,10 +4,10 @@
     <div class="container">
         <div class="goods-container">
             <div class="slide">
-                <img alt="slide show" src="{{ asset('/img/logo/slide2.png') }}">
+                <img alt="slide show" src="{{ asset('/img/logo/slide.png') }}">
             </div>
             <div clss="goods-category">
-                <h1 style="margin-top: 50px;">商品カテゴリ</h1>
+                <h1 class="category-title">商品カテゴリ</h1>
                 <ul class="category" id="category">
                     <li>
                         <h2><a href="#">WOMAN</a></h2>
@@ -39,6 +39,39 @@
                         @endif
                     @endforeach
                 </div>
+            </div>
+            <div class="recommendation">
+                <h1>今週のオススメ</h1>
+                <div class="recommend-image">
+                    <img alt="recommend" src="{{ asset('/img/logo/recommend.png') }}">
+                </div>
+                <div class="recommend-details">
+                    <div class="main-detail">
+                        <h2>好評販売中</h2>
+                        <p>MIUSTY'S一押しのサマーアイテム</p>
+                        <h1>#フレアワンピース</h1>
+                    </div>
+                    <div class="sub-detail">
+                        <h1>WOMAN</h1>
+                        <h2>マーセライズコットンロングTワンピース</h2>
+                        <p>¥1,990</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ranking">
+                <h1>ランキング</h1>
+                @foreach ($goods_ranking as $key => $ranking)
+                    <div class="ranking-list">
+                        <p class="rank-order">No.{{ $loop->iteration }}</p>
+                        <img src="{{ asset('storage/image/'  . $ranking->image_path) }}">
+                        <div class="ranking-name">
+                            <h1>{{ $ranking->name }}</h1>
+                        </div>
+                        <div class="price">
+                            <p>¥1,500</p>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

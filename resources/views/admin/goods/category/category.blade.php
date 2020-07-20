@@ -21,7 +21,7 @@
                             @foreach($categories as $category)
                                 <tr>
                                     <th>{{ $category->id }}</th>
-                                    <th>{{ $category->category_type->name }}</th>
+                                    <th>{{ $category->category_type_id }}</th>
                                     <td>{{ \Str::limit($category->name, 100) }}</td>
                                 </tr>
                             @endforeach

@@ -20,9 +20,10 @@ Auth::routes();
 Route::get('/', function () { return redirect('/home'); });
 
 // ユーザーログイン後
-Route::group(['middleware' => 'auth:user'], function() {
-    Route::get('/home', 'HomeController@index')->name('home');
-});
+// Route::group(['middleware' => 'auth:user'], function() {
+//     Route::get('/home', 'HomeController@index')->name('home');
+// });
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 // ルートミドルウェアとは

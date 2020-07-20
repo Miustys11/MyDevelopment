@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Cart;
+use App\Goods;
 
 class CartController extends Controller
 {
     public function myCart(Request $request) {
         
-        $user_id = Auth::id(); 
+        $user_id = Auth::guard('user')->id(); 
         
         // Cart Modelからデータを取得する
         $my_carts = Cart::where('user_id',$user_id)->get();
@@ -20,7 +21,7 @@ class CartController extends Controller
     
     public function addMycart(Request $request) {
         
-       $user_id = Auth::id();
+       $user_id = Auth::guard('user')->id();
        
        $goods_id = $request->goods_id;
 
@@ -45,7 +46,7 @@ class CartController extends Controller
 
     public function reduceMyCart(Request $request) {
         
-        $user_id = Auth::id(); 
+        $user_id = Auth::guard('user')->id(); 
         $goods_id = $request->goods_id;
 
         // Eloquent first() は1モデルインスタンスを返す、1レコードだけ取得(= find() )
@@ -68,14 +69,13 @@ class CartController extends Controller
     // ユーザーの商品一覧画面
     public function myCartList(Request $request) {
         // 現在認証されているユーザーのIDを取得
-        $user_id = Auth::id();
+        $user_id = Auth::guard('user')->id();
 
         // Cart Model の user_id と goods_id を取得
         $carts = Cart::where('user_id', $user_id)->get();
         
         $datas = ['0','1','2','3','4','5','6','7','8','9','10'];
 
-        
         return view('cart.cartlist', ['carts' => $carts, 'datas' => $datas]);
     }
     
@@ -84,7 +84,7 @@ class CartController extends Controller
     public function updateCart(Request $request) {
         
         // 現在認証されているユーザーのIDを取得
-        $user_id = Auth::id();
+        $user_id = Auth::guard('user')->id();
         $goods_id = $request->goods_id;
         
         // Cart Model の user_id を取得
@@ -103,7 +103,7 @@ class CartController extends Controller
     // カートの商品を消す
     public function deleteCart(Request $request) {
         
-        $user_id = Auth::id();
+        $user_id = Auth::guard('user')->id();
         $goods_id = $request->goods_id;
         $delete = Cart::where('user_id', $user_id)->where('goods_id',$goods_id)->delete();
        

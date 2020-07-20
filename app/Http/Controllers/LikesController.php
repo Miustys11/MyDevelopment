@@ -15,7 +15,7 @@ class LikesController extends Controller
     {
         Like::create(
           array(
-            'user_id' => Auth::user()->id,
+            'user_id' => Auth::guard('user')->user()->id,
             'goods_id' => $goodsId
           )
         );
@@ -39,7 +39,7 @@ class LikesController extends Controller
     {
         Like::firstOrCreate(
           [
-            'user_id' => Auth::user()->id,
+            'user_id' => Auth::guard('user')->user()->id,
             'goods_id' => $goodsId
           ]
         );
@@ -53,7 +53,7 @@ class LikesController extends Controller
 
     public function destroy_ajax(Request $request, $goodsId) {
 
-      Like::where('user_id', Auth::user()->id)
+      Like::where('user_id', Auth::guard('user')->user()->id)
         ->where('goods_id', $goodsId)
         ->delete();
       $goods = Goods::where('id', $goodsId)->withCount('likes')->first();

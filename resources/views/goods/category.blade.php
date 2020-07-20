@@ -28,7 +28,10 @@
                         @endif
                     </div>
                     <div class="goodsName">
-                        <h1><a href="/goods/{{ $item->sub_category_id }}">{{ str_limit($item->name, 150) }}</a></h1>
+                        <h1><a href="/goods/{{ $item->id }}">{{ str_limit($item->name, 150) }}</a></h1>
+                    </div>
+                    <div class="goodsPrice">
+                        <h1>¥1,500</h1>
                     </div>
                 </div>
             @endforeach
