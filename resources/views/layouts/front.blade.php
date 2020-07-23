@@ -84,6 +84,24 @@
                 @yield('content')
                 @yield('form')
             </main>
+            <footer>
+                <div class="footer-container">
+                    <div class="info-box">
+                        <ul>
+                            <li><a href="#">お問い合わせ</a></li>
+                            <li><a href="#">利用規約</a></li>
+                            <li><a href="#">企業情報</a></li>
+                            <li><a href="#">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                    <div class="caution">
+                        <p>本ページの価格は税抜価格（本体価格）表記です。別途、お支払い時に消費税を頂きます。</p>    
+                    </div>
+                    <div class="copy-right">
+                        <small>Copyright (c) MIUSTY OFFICIAL All Rights Reserved.</small>
+                    </div> 
+                </div>
+            </footer>
         </div>
     </body>
 </html>

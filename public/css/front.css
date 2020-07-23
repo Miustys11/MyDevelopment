@@ -333,7 +333,7 @@ a:hover {
 }
 
 .ranking {
-  height: 1800px;
+  height: 900px;
   margin-top: 40px;
 }
 
@@ -369,6 +369,58 @@ a:hover {
 .price p {
   font-weight: bold;
   margin-left: 10px;
+}
+
+.footer-container {
+  height: 300px;
+}
+
+.info-box {
+  width: 960px;
+  height: 30px;
+  display: inline-block;
+  margin: 30px 240px 0 240px;
+}
+
+.info-box ul {
+  width: 540px;
+  height: 30px;
+  margin: 0 auto;
+  padding-left: 0;
+}
+
+.info-box li {
+  width: 125px;
+  float: left;
+  text-align: center;
+  list-style: none;
+  border-right: solid 1px #333;
+}
+
+.info-box li:last-child {
+  margin-left: 20px;
+  border-right: none;
+}
+
+.info-box a {
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.caution p {
+  width: 960px;
+  margin: 50px 240px 0 240px;
+  font-size: 13px;
+  text-align: center;
+  border-bottom: solid 1px #dadada;
+  padding-bottom: 20px;
+}
+
+.copy-right {
+  width: 290px;
+  margin: 0 auto;
+  padding-top: 50px;
 }
 
 /* ここまで goods/index.blade.php のcss */

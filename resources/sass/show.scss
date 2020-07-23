@@ -266,6 +266,11 @@ a:hover {
   position: relative;
 }
 
+.image img {
+  width: 474px;
+  height: 592px;
+}
+
 .like-btn {
   width: 80px;
   height: 29px;
@@ -477,3 +482,14 @@ a:hover {
 }
 
 /* ここまで cart/cart.blade.php のcss */
+
+
+/* ここから contact/thanks.blade.php のcss */
+
+// .done {
+//   text-align: center;
+//   margin-top: 200px;
+//   margin-bottom: 200px;
+// }
+
+/* ここまで contact/thanks.blade.php のcss */
