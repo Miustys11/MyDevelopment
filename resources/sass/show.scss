@@ -57,63 +57,14 @@ body {
   }
 }
 
-body {
-  color: #000;
-}
-
-.header .logo {
-  width: 120px;
-  height: 82px;
-}
-
-.headline .caption {
-  position: relative;
-  width: 350px;
-}
-
-.headline .caption .image img {
-  width: 100%;
-}
-
-.headline .caption .title {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.headline .caption .title h1 {
-  color: #fff;
-  font-size: 1.2em;
-}
-
-.headline .caption .body {
-  font-size: 0.8em;
-}
-
-.posts .post .date {
-  font-size: 0.6em;
-  color: #999999;
-}
-
-.posts .post .title {
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
-.posts .post .body {
-  font-size: 0.8em;
-}
-
-.posts .post .image img {
-  width: 250px;
-}
+/* ここからheaderのcss */
 
 .header-container {
   width: 960px;
+  height: 65px;
   margin: 0 auto;
   padding-top: 15px;
+  position: relative;
 }
 
 #login-link {
@@ -141,10 +92,17 @@ body {
   float: right;
 }
 
+.header-logo {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+}
+
 .header-logo img {
   width: 50px;
   height: 50px;
-  float: left;
 }
 
 .header-logo a {
@@ -153,19 +111,19 @@ body {
 }
 
 .clearflex {
-  width: 389px;
+  width: 400px;
   height: 50px;
-  display: flex;
+  display: inline-block;
   align-items: center;
   margin-bottom: 0;
-  position: relative;
+  padding: 0;
 }
 
 .clearflex li {
   width: 79px;
   height: 50px;
   list-style: none;
-  display: inline-block;
+  float: left;
   text-align: center;
 }
 
@@ -190,26 +148,43 @@ a:hover {
 }
 
 .cart-item {
-  width: 50px;
+  width: 40px;
   height: 40px;
   display: inline-block;
-  position: absolute;
-  top: 15px;
-  left: 900px;
+  float: right;
 }
 
 .cart-item img {
   width: 40px;
   height: 40px;
 }
+
 .login {
-  width: 210px;
+  width: 100px;
   height: 50px;
   display: inline-block;
-  position: absolute;
-  top: 13px;
-  left: 1100px;
+  margin-left: 350px;
+  // position: absolute;
+  // top: 13px;
+  // left: 1100px;
 }
+
+#login-link {
+  width: 100px;
+  text-align: right;
+  float: right;
+}
+
+#login-link a {
+  width: 100px;
+  height: 50px;
+  padding: 0;
+  margin-right: 0;
+  text-align: center;
+  line-height: 50px;
+}
+
+/* ここまでheaderのcss */
 
 /* ここから goods/show.blade.php のcss */
 
@@ -296,42 +271,43 @@ a:hover {
 
 .select-color h1 {
   font-size: 20px;
+}
+
+.color {
   padding-bottom: 10px;
   border-bottom: dotted 1px #333;
 }
 
+.color img {
+  width: 30px;
+  height: 30px;
+  border: solid 1px #CCC;
+  margin-left: 4px;
+  margin-bottom: 4px;
+}
+
 .select-size {
+  padding-top: 10px;
   padding-bottom: 10px;
   margin-bottom: 20px;
   border-bottom: dotted 1px #333;
 }
 .select-size h1 {
   font-size: 20px;
-  padding-bottom: 10px;
-  border-bottom: dotted 1px #333;
 }
-
-// .select-size button {
-//   border-color: #c0c0c0;
-//   border-radius: 0;
-//   width: 46px;
-//   height: 25px;
-//   line-height: 7px;
-//   margin-bottom: 5px;
-// }
 
 .btn {
   display: inline-block;
 	position: relative;
   width: 46px;
   height: 25px;
-	padding: 0.8em;
 	text-align: center;
 	text-decoration: none;
 	color: #1B1B1B;
 	background: #fff;
-  border:1px solid #fff;
-  line-height: 15px;
+  border:1px solid #CCC;
+  line-height: 12px;
+  margin-bottom: 5px;
 }
 
 .btn:hover {

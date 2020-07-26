@@ -49719,12 +49719,12 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/satoumiu/portfolio/MyDevelopment/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/satoumiu/portfolio/MyDevelopment/resources/sass/app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! /Users/satoumiu/portfolio/MyDevelopment/resources/sass/admin.scss */"./resources/sass/admin.scss");
-__webpack_require__(/*! /Users/satoumiu/portfolio/MyDevelopment/resources/sass/front.scss */"./resources/sass/front.scss");
-__webpack_require__(/*! /Users/satoumiu/portfolio/MyDevelopment/resources/sass/show.scss */"./resources/sass/show.scss");
-module.exports = __webpack_require__(/*! /Users/satoumiu/portfolio/MyDevelopment/resources/sass/category.scss */"./resources/sass/category.scss");
+__webpack_require__(/*! /Users/satoumiu/portfolio2/MyDevelopment/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/satoumiu/portfolio2/MyDevelopment/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/satoumiu/portfolio2/MyDevelopment/resources/sass/admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! /Users/satoumiu/portfolio2/MyDevelopment/resources/sass/front.scss */"./resources/sass/front.scss");
+__webpack_require__(/*! /Users/satoumiu/portfolio2/MyDevelopment/resources/sass/show.scss */"./resources/sass/show.scss");
+module.exports = __webpack_require__(/*! /Users/satoumiu/portfolio2/MyDevelopment/resources/sass/category.scss */"./resources/sass/category.scss");
 
 
 /***/ })

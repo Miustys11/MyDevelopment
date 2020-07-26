@@ -41,10 +41,18 @@
                     </div>
                     <div class="details bottom" id="bottom">
                         <div class="select-color">
-                            <h1>・カラーを選択</h1>
+                            <h1>カラーを選択</h1>
+                            <div class="color">
+                                <img alt="color" src="{{ asset('/img/color/white.png') }}">
+                                <img alt="color" src="{{ asset('/img/color/black.png') }}">
+                                <img alt="color" src="{{ asset('/img/color/pink.png') }}">
+                                <img alt="color" src="{{ asset('/img/color/natural.png') }}">
+                                <img alt="color" src="{{ asset('/img/color/olive.png') }}">
+                                <img alt="color" src="{{ asset('/img/color/purple.png') }}">
+                            </div>
                         </div>
                         <div class="select-size">
-                            <h1>・サイズを選択</h1>
+                            <h1>サイズを選択</h1>
                             <button class="btn">XS</button>
                             <button class="btn">S</button>
                             <button class="btn">M</button><br>

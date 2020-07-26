@@ -38,7 +38,7 @@
         <link href="{{ asset('css/show.css') }}" rel="stylesheet">
     </head>
     <body>
-        <div id="app">
+        <div>
             <div class="header-container">
                 <div class="header-logo">
                     <a href="{{ action('GoodsController@index') }}">
@@ -57,32 +57,33 @@
                 </div>
                 <div class="login">
                     {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
-                        @if(!Auth::guard('user')->check())
-                            <li id="login-link"><a class="nav-link" href="{{ route('login') }}">{{ __('messages.Login') }}</a></li>
-                        {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
-                        @else
-                            <li class="nav-item dropdown" style="list-style: none; ">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::guard("user")->user()->name }} <span class="caret"></span>
-                                </a>
+                    @if(!Auth::guard('user')->check())
+                        <li id="login-link"><a class="nav-link" href="{{ route('login') }}">{{ __('messages.Login') }}</a></li>
+                    {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
+                    @else
+                        <li class="nav-item dropdown" style="height: 10px;list-style: none; ">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::guard("user")->user()->name }} <span class="caret"></span>
+                            </a>
 
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                                onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                         @endguest 
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest 
                 </div>
             </div>
             <main class="py-4">
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
                 @yield('content')
+                @yield('form')
             </main>
         </div>
     </body>
