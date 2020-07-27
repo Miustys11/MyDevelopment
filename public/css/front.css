@@ -371,6 +371,99 @@ a:hover {
   margin-left: 10px;
 }
 
+.recommends-fashion {
+  height: 1600px;
+}
+
+.summer-recommend-fashion {
+  margin-bottom: 25px;
+}
+
+.recommends-container {
+  margin-top: 20px;
+}
+
+.fashion-detail1 {
+  width: 480px;
+  height: 711px;
+  display: inline-block;
+  float: right;
+}
+
+.fashion-detail1 h2 {
+  color: #808080;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-top: 200px;
+}
+
+.fashion-detail1 h3 {
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.fashion-detail1 p {
+  color: #333;
+  font-size: 13px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.fashion-detail2 {
+  width: 480px;
+  height: 711px;
+  display: inline-block;
+  float: left;
+}
+
+.fashion-detail2 h2 {
+  color: #808080;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-top: 200px;
+}
+
+.fashion-detail2 h3 {
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.fashion-detail2 p {
+  color: #333;
+  font-size: 13px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.see-more {
+  height: 50px;
+  margin-top: 40px;
+}
+
+.see-more-btn {
+  width: 600px;
+  margin: 0 180px;
+  display: inline-block;
+  background: #fff;
+  border: solid 1px #333;
+}
+
+.see-more-btn:hover {
+  background: #eee;
+  color: #333;
+}
+
+.see-more-btn p {
+  padding: 10px 0;
+  margin-bottom: 0;
+}
+
 .footer-container {
   height: 300px;
 }

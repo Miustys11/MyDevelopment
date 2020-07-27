@@ -73,6 +73,34 @@
                     </div>
                 @endforeach
             </div>
+            <div class="recommends-fashion">
+                <h1 class="summer-recommend-fashion">この夏オススメのサマーファッション</h1>
+                <div class="recommends-container">
+                    <img alt="recommend" src="{{ asset('/img/recommend/recommend1.jpg') }}">
+                    <div class="fashion-detail1">
+                        <h2>
+                            ジャガードカシュクールトップスXパンツ<br>セットアップ
+                        </h2>
+                        <h3>- ¥2,350</h3>
+                        <p>大人コーデが即完成するセットアップ</p>
+                    </div>
+                </div>
+                <div class="recommends-container">
+                    <div class="fashion-detail2">
+                        <h2>
+                            プリーツ切替キャミワンピース
+                        </h2>
+                        <h3>- ¥2,900</h3>
+                        <p>シンプルな統一感が大人っぽさを演出</p>
+                    </div>
+                    <img alt="recommend" src="{{ asset('/img/recommend/recommend3.jpg') }}">
+                </div>
+                <div class="see-more">
+                    <button class="see-more-btn">
+                        <p>もっと見る</p>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
