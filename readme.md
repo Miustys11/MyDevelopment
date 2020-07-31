@@ -1,4 +1,4 @@
-<p align="center"><img width="1170" alt="スクリーンショット 2020-07-31 17 08 50" src="https://user-images.githubusercontent.com/63857015/89014786-0355fc80-d351-11ea-8a3e-b34d8c2ab0c5.png"></p>
+<p align="center">![download](https://user-images.githubusercontent.com/63857015/89018200-70b85c00-d356-11ea-9180-4709701d8316.gif)</p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
