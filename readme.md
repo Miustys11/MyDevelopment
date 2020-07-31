@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## MIUSTY EC SITE
+## 概要
 PHP/laravelの勉強として作成した、アパレルECサイトのポートフォリオです。 一般的なECサイトに実装される、基本的な機能を実装しました。
 
 ## バージョン
