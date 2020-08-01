@@ -20,10 +20,10 @@ laravel 5.8
 ・カテゴリー機能<br>
 ・ランキング機能<br>
 ・リコメンド機能<br>
-・検索機能<br>
+・検索機能(JavaScript)<br>
 ・カート機能<br>
-・お気に入り機能<br>
-・決済機能<br>
+・お気に入り機能(JavaScript)<br>
+・決済機能(Stripe)<br>
 
 ### ユーザー関連
 ・ログイン、ログアウト機能
@@ -37,3 +37,17 @@ laravel 5.8
 ## 使用している技術
 ・AWSによる環境構築<br>
 ・データベースにはMySQLを使用<br>
+
+## 特徴:dizzy:
+
+<h3 align="center">- いいね機能 -</h3>
+<p align="center"><img width="1078" alt="like" src="https://user-images.githubusercontent.com/63857015/89091365-19f96380-d3e4-11ea-943c-1c80f66d2e82.png"></p>
+
+<h3 align="center">- 決済機能 -</h3>
+<p align="center"><img width="1039" alt="pay" src="https://user-images.githubusercontent.com/63857015/89091481-161a1100-d3e5-11ea-919d-3fd7f8e7fc39.png"></p>
+
+<h3 align="center">- カテゴリ機能 -</h3>
+<p align="center"><img width="1126" alt="category" src="https://user-images.githubusercontent.com/63857015/89091505-406bce80-d3e5-11ea-9ba8-a213c93fe11d.png"></p>
+
+<h3 align="center">- ランキング機能 -</h3>
+<p align="center"><img width="1095" alt="ranking" src="https://user-images.githubusercontent.com/63857015/89091515-52e60800-d3e5-11ea-8c0a-22b1bd117c6e.png"></p>
