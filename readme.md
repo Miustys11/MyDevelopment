@@ -44,11 +44,17 @@ laravel 5.8.38
 <h3 align="center">- いいね機能 -</h3>
 <p align="center"><img width="1078" alt="like" width=40% src="https://user-images.githubusercontent.com/63857015/89091365-19f96380-d3e4-11ea-943c-1c80f66d2e82.png"></p>
 
+##
+
 <h3 align="center">- 決済機能 -</h3>
 <p align="center"><img width="1039" alt="pay" width=40% src="https://user-images.githubusercontent.com/63857015/89091481-161a1100-d3e5-11ea-919d-3fd7f8e7fc39.png"></p>
 
+##
+
 <h3 align="center">- カテゴリ機能 -</h3>
 <p align="center"><img width="1126" alt="category" width=40% src="https://user-images.githubusercontent.com/63857015/89091505-406bce80-d3e5-11ea-9ba8-a213c93fe11d.png"></p>
+
+##
 
 <h3 align="center">- ランキング機能 -</h3>
 <p align="center"><img width="1095" alt="ranking" width=40% src="https://user-images.githubusercontent.com/63857015/89091515-52e60800-d3e5-11ea-8c0a-22b1bd117c6e.png"></p>
