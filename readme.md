@@ -41,7 +41,7 @@ laravel 5.8
 ## 特徴:dizzy:
 
 <h3 align="center">- いいね機能 -</h3>
-<p align="center"><img width="1078" alt="like" src="https://user-images.githubusercontent.com/63857015/89091365-19f96380-d3e4-11ea-943c-1c80f66d2e82.png"></p>
+<p align="center"><img width="1078" alt="like" width="40%" src="https://user-images.githubusercontent.com/63857015/89091365-19f96380-d3e4-11ea-943c-1c80f66d2e82.png"></p>
 
 <h3 align="center">- 決済機能 -</h3>
 <p align="center"><img width="1039" alt="pay" src="https://user-images.githubusercontent.com/63857015/89091481-161a1100-d3e5-11ea-919d-3fd7f8e7fc39.png"></p>
