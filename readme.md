@@ -10,9 +10,13 @@
 ## :memo:概要
 PHP/laravelの勉強として作成した、アパレルECサイトのポートフォリオです。 一般的なECサイトに実装される、基本的な機能を実装しました。
 
+<br>
+
 ## :thought_balloon:バージョン
 PHP 7.3.11<br>
 laravel 5.8.38
+
+<br>
 
 ## :page_with_curl:実装機能
 ### 商品関連 
@@ -35,9 +39,13 @@ laravel 5.8.38
 ・編集機能<br>
 ・削除機能<br>
 
+<br>
+
 ## :pushpin:使用している技術
 ・AWSによる環境構築<br>
 ・データベースにはMySQLを使用<br>
+
+<br>
 
 ## 特徴:dizzy:
 
