@@ -88,7 +88,7 @@
                 <div class="recommends-container">
                     <div class="fashion-detail2">
                         <h2>
-                            プリーツ切替キャミワンピース！
+                            プリーツ切替キャミワンピース
                         </h2>
                         <h3>- ¥2,900</h3>
                         <p>シンプルな統一感が大人っぽさを演出</p>
