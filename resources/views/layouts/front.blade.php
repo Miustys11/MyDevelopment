@@ -88,7 +88,7 @@
                 <div class="footer-container">
                     <div class="info-box">
                         <ul>
-                            <li><a href="#">お問い合わせ</a></li>
+                            <li><a href="{{ action('ContactController@index')}}">お問い合わせ</a></li>
                             <li><a href="#">利用規約</a></li>
                             <li><a href="#">企業情報</a></li>
                             <li><a href="#">プライバシーポリシー</a></li>

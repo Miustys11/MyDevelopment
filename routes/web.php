@@ -78,10 +78,10 @@ Route::get('/', 'GoodsController@index');
 Route::get('goods/{id}', 'GoodsController@show');
 
 // カート表示
-Route::get('/mycart', 'CartController@myCart')->name('mycart');
+Route::get('/mycart', 'CartController@myCart')->name('mycart')->middleware('auth');
 Route::post('/mycart', 'CartController@addMycart');
 Route::post('/mycart/reduce', 'CartController@reduceMyCart');
-Route::get('/mycartlist', 'CartController@myCartList')->name('mycartlist');
+Route::get('/mycartlist', 'CartController@myCartList')->name('mycartlist')->middleware('auth');
 Route::post('/cartdelete','CartController@deleteCart')->name('mycart.delete');
 Route::post('/cartupdate','CartController@updateCart')->name('mycart.update');
 Route::post('cart/complete', 'CartController@complete')->name('cart.complete');
