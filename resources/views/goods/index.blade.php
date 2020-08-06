@@ -63,7 +63,7 @@
                 @foreach ($goods_ranking as $key => $ranking)
                     <div class="ranking-list">
                         <p class="rank-order">No.{{ $loop->iteration }}</p>
-                        <img src="{{ asset('storage/image/'  . $ranking->image_path) }}">
+                        <img src="{{ $ranking->image_path }}">
                         <div class="ranking-name">
                             <h1>{{ $ranking->name }}</h1>
                         </div>

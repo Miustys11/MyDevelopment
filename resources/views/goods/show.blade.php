@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="image">
-                        <img src="{{ asset('storage/image/'  . $goods->image_path) }}">
+                        <img src="{{ $goods->image_path }}">
                         <div class="like-btn">
                             @if(Auth::guard('user')->check())
                                 @if ($like)

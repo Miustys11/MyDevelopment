@@ -12,6 +12,7 @@ use App\Category;
 use App\SubCategory;
 use App\CategoryType;
 use Carbon\Carbon;
+use Storage;
 
 class GoodsController extends Controller
 {
@@ -47,8 +48,8 @@ class GoodsController extends Controller
       
         // フォームから画像が送信されてきたら、保存して、 $goods->image_path に画像のパスを保存する
         if (isset($form['image'])) {
-            $path = $request->file('image')->store('public/image');
-            $goods->image_path = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+            $goods->image_path = Storage::disk('s3')->url($path);
         } else {
             $goods->image_path = null;
         }
@@ -121,8 +122,8 @@ class GoodsController extends Controller
         $goods_form = $request->all();
         
         if (isset($goods_form['image'])) {
-            $path = $request->file('image')->store('public/image');
-            $goods->image_path = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$goods_form['image'],'public');
+            $goods->image_path = Storage::disk('s3')->url($path);
             unset($goods_form['image']);
         }  elseif (isset($request->remove)) {
             $goods->image_path = null;

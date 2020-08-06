@@ -24,7 +24,7 @@
                 <div class="goods-box">
                     <div class="img">
                         @if ($item->image_path)
-                            <img src="{{ asset('storage/image/'  . $item->image_path) }}">
+                            <img src="{{ $item->image_path }}">
                         @endif
                     </div>
                     <div class="goodsName">
