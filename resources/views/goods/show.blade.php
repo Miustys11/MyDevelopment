@@ -88,7 +88,7 @@
                 <h1 class="recommend-goods">このアイテムを見た人は、こちらのアイテムも見ています</h1>
                 @foreach ($goods_recommends as $recommend)
                     <div class="recommends">
-                        <img src="{{ asset('storage/image/'  . $recommend->image_path) }}">
+                        <img src="{{ $recommend->image_path }}">
                         <h1>{{ $recommend->name }}</h1>
                         <p>¥1500</p>
                     </div>
