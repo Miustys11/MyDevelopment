@@ -46,7 +46,7 @@ Herokuへのデプロイ<br>
 <h3 align="center">- カテゴリー機能 -</h3>
 
 <p align="center">
-  <img width=40% alt="category" src="https://user-images.githubusercontent.com/63857015/89264024-352ad400-d66d-11ea-8b65-20e57370d427.png">
+  <img width=60% alt="category" src="https://user-images.githubusercontent.com/63857015/89264024-352ad400-d66d-11ea-8b65-20e57370d427.png">
 </p>
 
 ##
@@ -54,7 +54,7 @@ Herokuへのデプロイ<br>
 <h3 align="center">- お気に入り機能 -</h3>
 
 <p align="center">
-  <img width=40% alt="like" src="https://user-images.githubusercontent.com/63857015/89264521-082af100-d66e-11ea-9dd7-d3aab2b92572.png">
+  <img width=60% alt="like" src="https://user-images.githubusercontent.com/63857015/89264521-082af100-d66e-11ea-9dd7-d3aab2b92572.png">
 </p>
 
 ##
@@ -62,7 +62,7 @@ Herokuへのデプロイ<br>
 <h3 align="center">- 決済機能 -</h3>
 
 <p align="center">
-  <img width=40% alt="pay" src="https://user-images.githubusercontent.com/63857015/89264618-301a5480-d66e-11ea-9a36-1b9f8861872a.png">
+  <img width=60% alt="pay" src="https://user-images.githubusercontent.com/63857015/89264618-301a5480-d66e-11ea-9a36-1b9f8861872a.png">
 </p>
 
 ##
@@ -70,5 +70,5 @@ Herokuへのデプロイ<br>
 <h3 align="center">- ランキング機能 -</h3>
 
 <p align="center">
-  <img width=40% alt="ranking" src="https://user-images.githubusercontent.com/63857015/89264677-488a6f00-d66e-11ea-9d5e-9d20370782b5.png">
+  <img width=60% alt="ranking" src="https://user-images.githubusercontent.com/63857015/89264677-488a6f00-d66e-11ea-9d5e-9d20370782b5.png">
 </p>
