@@ -30,6 +30,7 @@ laravel 5.8.38<br>
 ・お気に入り機能<br>
 ・リコメンド機能<br>
 ・決済機能<br>
+.お問い合わせ機能<br>
 
 ### ユーザー関連
 
@@ -71,4 +72,12 @@ Herokuへのデプロイ<br>
 
 <p align="center">
   <img width=60% alt="ranking" src="https://user-images.githubusercontent.com/63857015/89264677-488a6f00-d66e-11ea-9d5e-9d20370782b5.png">
+</p>
+
+##
+
+<h3 align="center">- お問い合わせ機能 -</h3>
+
+<p align="center">
+  <img width=60% alt="contact" src="https://user-images.githubusercontent.com/63857015/90313188-66e14c00-df45-11ea-9458-fcd6197fdc3c.png">
 </p>
